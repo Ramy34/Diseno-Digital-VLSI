@@ -1,0 +1,20 @@
+//! **************************************************************************
+// Written by: Map I.31 on Wed Aug 15 18:56:02 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "L<2>" LOCATE = SITE "N15" LEVEL 1;
+COMP "L<3>" LOCATE = SITE "P15" LEVEL 1;
+COMP "L<4>" LOCATE = SITE "R16" LEVEL 1;
+COMP "L<5>" LOCATE = SITE "F13" LEVEL 1;
+COMP "L<6>" LOCATE = SITE "N16" LEVEL 1;
+COMP "AN<0>" LOCATE = SITE "D14" LEVEL 1;
+COMP "AN<1>" LOCATE = SITE "G14" LEVEL 1;
+COMP "AN<2>" LOCATE = SITE "F14" LEVEL 1;
+COMP "AN<3>" LOCATE = SITE "E13" LEVEL 1;
+COMP "reloj" LOCATE = SITE "T9" LEVEL 1;
+COMP "ALAR" LOCATE = SITE "P13" LEVEL 1;
+COMP "L<0>" LOCATE = SITE "E14" LEVEL 1;
+COMP "L<1>" LOCATE = SITE "G13" LEVEL 1;
+NET "reloj_BUFGP/IBUFG" BEL "reloj_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;

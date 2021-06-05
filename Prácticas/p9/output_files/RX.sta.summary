@@ -1,0 +1,257 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'RX:R1|LEDS[0]'
+Slack : -5.258
+TNS   : -37.212
+
+Type  : Slow 1200mV 85C Model Setup 'clk'
+Slack : -4.083
+TNS   : -168.337
+
+Type  : Slow 1200mV 85C Model Setup 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -3.964
+TNS   : -37.823
+
+Type  : Slow 1200mV 85C Model Setup 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -3.648
+TNS   : -21.601
+
+Type  : Slow 1200mV 85C Model Setup 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -1.857
+TNS   : -63.401
+
+Type  : Slow 1200mV 85C Model Setup 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -1.672
+TNS   : -60.342
+
+Type  : Slow 1200mV 85C Model Setup 'clk2Hz:clk2Hz_i|temporal'
+Slack : -0.224
+TNS   : -0.836
+
+Type  : Slow 1200mV 85C Model Hold 'clk'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk2Hz:clk2Hz_i|temporal'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : 0.410
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : 0.420
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : 0.552
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'RX:R1|LEDS[0]'
+Slack : 1.244
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -125.061
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -1.403
+TNS   : -56.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -1.403
+TNS   : -56.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -1.403
+TNS   : -22.448
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -1.403
+TNS   : -16.836
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk2Hz:clk2Hz_i|temporal'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RX:R1|LEDS[0]'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'RX:R1|LEDS[0]'
+Slack : -4.881
+TNS   : -34.922
+
+Type  : Slow 1200mV 0C Model Setup 'clk'
+Slack : -3.689
+TNS   : -146.025
+
+Type  : Slow 1200mV 0C Model Setup 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -3.563
+TNS   : -33.140
+
+Type  : Slow 1200mV 0C Model Setup 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -3.260
+TNS   : -18.632
+
+Type  : Slow 1200mV 0C Model Setup 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -1.671
+TNS   : -56.046
+
+Type  : Slow 1200mV 0C Model Setup 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -1.480
+TNS   : -52.970
+
+Type  : Slow 1200mV 0C Model Setup 'clk2Hz:clk2Hz_i|temporal'
+Slack : -0.118
+TNS   : -0.421
+
+Type  : Slow 1200mV 0C Model Hold 'clk'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk2Hz:clk2Hz_i|temporal'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : 0.381
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : 0.384
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : 0.503
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'RX:R1|LEDS[0]'
+Slack : 1.120
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -125.061
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -1.403
+TNS   : -56.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -1.403
+TNS   : -56.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -1.403
+TNS   : -22.448
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -1.403
+TNS   : -16.836
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk2Hz:clk2Hz_i|temporal'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RX:R1|LEDS[0]'
+Slack : 0.425
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'RX:R1|LEDS[0]'
+Slack : -1.822
+TNS   : -12.781
+
+Type  : Fast 1200mV 0C Model Setup 'clk'
+Slack : -1.311
+TNS   : -25.035
+
+Type  : Fast 1200mV 0C Model Setup 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -1.015
+TNS   : -7.489
+
+Type  : Fast 1200mV 0C Model Setup 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -0.874
+TNS   : -3.317
+
+Type  : Fast 1200mV 0C Model Setup 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -0.233
+TNS   : -4.443
+
+Type  : Fast 1200mV 0C Model Setup 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -0.180
+TNS   : -3.631
+
+Type  : Fast 1200mV 0C Model Setup 'clk2Hz:clk2Hz_i|temporal'
+Slack : 0.476
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk2Hz:clk2Hz_i|temporal'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : 0.211
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'RX:R1|LEDS[0]'
+Slack : 0.570
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Slack : -3.000
+TNS   : -104.194
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Leds:L1|Divisor:R2|cuenta[23]'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Leds:L2|Divisor:R2|cuenta[23]'
+Slack : -1.000
+TNS   : -40.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Leds:L1|Divisor:R1|cuenta[10]'
+Slack : -1.000
+TNS   : -16.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Leds:L2|Divisor:R1|cuenta[10]'
+Slack : -1.000
+TNS   : -12.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk2Hz:clk2Hz_i|temporal'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RX:R1|LEDS[0]'
+Slack : 0.339
+TNS   : 0.000
+
+------------------------------------------------------------

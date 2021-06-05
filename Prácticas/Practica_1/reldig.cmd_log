@@ -1,0 +1,44 @@
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -i -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "reldig.ucf" -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf -ucf reldig.ucf
+bitgen -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -f reldig.ut reldig.ncd
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "reldig.ucf" -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf -ucf reldig.ucf
+bitgen -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -f reldig.ut reldig.ncd
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "reldig.ucf" -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf -ucf reldig.ucf
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "reldig.ucf" -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf -ucf reldig.ucf
+bitgen -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -f reldig.ut reldig.ncd
+bitgen -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -f reldig.ut reldig.ncd
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+ngdbuild -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -dd _ngo -nt timestamp -uc "reldig.ucf" -p xc3s200-ft256-5 "reldig.ngc" reldig.ngd
+map -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -p xc3s200-ft256-5 -cm area -pr b -k 4 -c 100 -o reldig_map.ncd reldig.ngd reldig.pcf
+par -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -w -intstyle ise -ol std -t 1 reldig_map.ncd reldig.ncd reldig.pcf
+trce -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -e 3 -l 3 -s 5 -xml reldig reldig.ncd -o reldig.twr reldig.pcf -ucf reldig.ucf
+bitgen -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -f reldig.ut reldig.ncd
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr
+xst -ise "C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/Practica_1.ise" -intstyle ise -ifn reldig.xst -ofn reldig.syr

@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "foquitos[0]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[1]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[2]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[3]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[4]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[5]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[6]",
+					"strict" : false
+				},
+				{
+					"name" : "foquitos[7]",
+					"strict" : false
+				},
+				{
+					"name" : "estadoDS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "estadoDS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "estadoDS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "estadoDS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "wire_rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

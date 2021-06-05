@@ -1,0 +1,113 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk50MHz'
+Slack : -3.709
+TNS   : -35.836
+
+Type  : Slow 1200mV 85C Model Setup 'temporal'
+Slack : -2.770
+TNS   : -133.103
+
+Type  : Slow 1200mV 85C Model Setup 'reloj_pixel'
+Slack : -2.025
+TNS   : -64.129
+
+Type  : Slow 1200mV 85C Model Hold 'temporal'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'reloj_pixel'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk50MHz'
+Slack : 0.638
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk50MHz'
+Slack : -3.000
+TNS   : -33.866
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'temporal'
+Slack : -1.403
+TNS   : -95.404
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reloj_pixel'
+Slack : -1.403
+TNS   : -61.732
+
+Type  : Slow 1200mV 0C Model Setup 'clk50MHz'
+Slack : -3.387
+TNS   : -30.660
+
+Type  : Slow 1200mV 0C Model Setup 'temporal'
+Slack : -2.418
+TNS   : -113.516
+
+Type  : Slow 1200mV 0C Model Setup 'reloj_pixel'
+Slack : -1.799
+TNS   : -55.608
+
+Type  : Slow 1200mV 0C Model Hold 'temporal'
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'reloj_pixel'
+Slack : 0.396
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk50MHz'
+Slack : 0.589
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk50MHz'
+Slack : -3.000
+TNS   : -33.866
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'temporal'
+Slack : -1.403
+TNS   : -95.404
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reloj_pixel'
+Slack : -1.403
+TNS   : -61.732
+
+Type  : Fast 1200mV 0C Model Setup 'clk50MHz'
+Slack : -1.049
+TNS   : -4.018
+
+Type  : Fast 1200mV 0C Model Setup 'temporal'
+Slack : -0.523
+TNS   : -16.230
+
+Type  : Fast 1200mV 0C Model Setup 'reloj_pixel'
+Slack : -0.263
+TNS   : -3.967
+
+Type  : Fast 1200mV 0C Model Hold 'temporal'
+Slack : 0.145
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'reloj_pixel'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk50MHz'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk50MHz'
+Slack : -3.000
+TNS   : -28.751
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'temporal'
+Slack : -1.000
+TNS   : -68.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reloj_pixel'
+Slack : -1.000
+TNS   : -44.000
+
+------------------------------------------------------------

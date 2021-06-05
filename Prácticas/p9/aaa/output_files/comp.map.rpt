@@ -1,0 +1,653 @@
+Analysis & Synthesis report for comp
+Mon Oct 22 21:40:31 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Leds:L1|Divisor:R1
+ 14. Parameter Settings for User Entity Instance: Leds:L1|Divisor:R2
+ 15. Parameter Settings for User Entity Instance: Leds:L2|Divisor:R1
+ 16. Parameter Settings for User Entity Instance: Leds:L2|Divisor:R2
+ 17. Port Connectivity Checks: "Leds:L2"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct 22 21:40:31 2018       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; comp                                        ;
+; Top-level Entity Name              ; comp                                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 339                                         ;
+;     Total combinational functions  ; 339                                         ;
+;     Dedicated logic registers      ; 171                                         ;
+; Total registers                    ; 171                                         ;
+; Total pins                         ; 14                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; comp               ; comp               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                             ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+; ../../p5/pwm.vhd                 ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/p5/pwm.vhd               ;         ;
+; ../../p5/leds.vhd                ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/p5/leds.vhd              ;         ;
+; ../../p5/divisor.vhd             ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/p5/divisor.vhd           ;         ;
+; ../RX.vhd                        ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/p9/RX.vhd                ;         ;
+; ../output_files/comp.vhd         ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/p9/output_files/comp.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 339       ;
+;                                             ;           ;
+; Total combinational functions               ; 339       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 74        ;
+;     -- 3 input functions                    ; 136       ;
+;     -- <=2 input functions                  ; 129       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 225       ;
+;     -- arithmetic mode                      ; 114       ;
+;                                             ;           ;
+; Total registers                             ; 171       ;
+;     -- Dedicated logic registers            ; 171       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 14        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 63        ;
+; Total fan-out                               ; 1365      ;
+; Average fan-out                             ; 2.54      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name      ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
+; |comp                      ; 339 (30)            ; 171 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 14   ; 0            ; 0          ; |comp                    ; comp        ; work         ;
+;    |Leds:L1|               ; 137 (44)            ; 58 (40)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1            ; Leds        ; work         ;
+;       |Divisor:R1|         ; 10 (10)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|Divisor:R1 ; Divisor     ; work         ;
+;       |Divisor:R2|         ; 23 (23)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|Divisor:R2 ; Divisor     ; work         ;
+;       |PWM:P1|             ; 17 (17)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P1     ; PWM         ; work         ;
+;       |PWM:P2|             ; 13 (13)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P2     ; PWM         ; work         ;
+;       |PWM:P3|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P3     ; PWM         ; work         ;
+;       |PWM:P4|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P4     ; PWM         ; work         ;
+;       |PWM:P5|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P5     ; PWM         ; work         ;
+;       |PWM:P6|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P6     ; PWM         ; work         ;
+;       |PWM:P7|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P7     ; PWM         ; work         ;
+;       |PWM:P8|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L1|PWM:P8     ; PWM         ; work         ;
+;    |Leds:L2|               ; 115 (44)            ; 77 (40)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2            ; Leds        ; work         ;
+;       |Divisor:R1|         ; 10 (10)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|Divisor:R1 ; Divisor     ; work         ;
+;       |Divisor:R2|         ; 24 (24)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|Divisor:R2 ; Divisor     ; work         ;
+;       |PWM:P1|             ; 14 (14)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|PWM:P1     ; PWM         ; work         ;
+;       |PWM:P2|             ; 13 (13)             ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|PWM:P2     ; PWM         ; work         ;
+;       |PWM:P3|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|PWM:P3     ; PWM         ; work         ;
+;       |PWM:P4|             ; 5 (5)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|Leds:L2|PWM:P4     ; PWM         ; work         ;
+;    |RX:R1|                 ; 57 (57)             ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |comp|RX:R1              ; RX          ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; foquitos[0]$latch                                  ; foquitos[3]         ; yes                    ;
+; foquitos[1]$latch                                  ; foquitos[3]         ; yes                    ;
+; foquitos[2]$latch                                  ; foquitos[3]         ; yes                    ;
+; foquitos[3]$latch                                  ; foquitos[3]         ; yes                    ;
+; foquitos[4]$latch                                  ; foquitos[7]         ; yes                    ;
+; foquitos[5]$latch                                  ; foquitos[7]         ; yes                    ;
+; foquitos[6]$latch                                  ; foquitos[7]         ; yes                    ;
+; foquitos[7]$latch                                  ; foquitos[7]         ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++-----------------------------------------+-------------------------------------------+
+; Register name                           ; Reason for Removal                        ;
++-----------------------------------------+-------------------------------------------+
+; Leds:L2|PWM:P2|Cuenta[7]                ; Merged with Leds:L2|PWM:P1|Cuenta[7]      ;
+; Leds:L2|PWM:P3|Cuenta[7]                ; Merged with Leds:L2|PWM:P1|Cuenta[7]      ;
+; Leds:L2|PWM:P4|Cuenta[7]                ; Merged with Leds:L2|PWM:P1|Cuenta[7]      ;
+; Leds:L2|PWM:P2|Cuenta[6]                ; Merged with Leds:L2|PWM:P1|Cuenta[6]      ;
+; Leds:L2|PWM:P3|Cuenta[6]                ; Merged with Leds:L2|PWM:P1|Cuenta[6]      ;
+; Leds:L2|PWM:P4|Cuenta[6]                ; Merged with Leds:L2|PWM:P1|Cuenta[6]      ;
+; Leds:L2|PWM:P2|Cuenta[5]                ; Merged with Leds:L2|PWM:P1|Cuenta[5]      ;
+; Leds:L2|PWM:P3|Cuenta[5]                ; Merged with Leds:L2|PWM:P1|Cuenta[5]      ;
+; Leds:L2|PWM:P4|Cuenta[5]                ; Merged with Leds:L2|PWM:P1|Cuenta[5]      ;
+; Leds:L2|PWM:P2|Cuenta[4]                ; Merged with Leds:L2|PWM:P1|Cuenta[4]      ;
+; Leds:L2|PWM:P3|Cuenta[4]                ; Merged with Leds:L2|PWM:P1|Cuenta[4]      ;
+; Leds:L2|PWM:P4|Cuenta[4]                ; Merged with Leds:L2|PWM:P1|Cuenta[4]      ;
+; Leds:L2|PWM:P2|Cuenta[3]                ; Merged with Leds:L2|PWM:P1|Cuenta[3]      ;
+; Leds:L2|PWM:P3|Cuenta[3]                ; Merged with Leds:L2|PWM:P1|Cuenta[3]      ;
+; Leds:L2|PWM:P4|Cuenta[3]                ; Merged with Leds:L2|PWM:P1|Cuenta[3]      ;
+; Leds:L2|PWM:P2|Cuenta[2]                ; Merged with Leds:L2|PWM:P1|Cuenta[2]      ;
+; Leds:L2|PWM:P3|Cuenta[2]                ; Merged with Leds:L2|PWM:P1|Cuenta[2]      ;
+; Leds:L2|PWM:P4|Cuenta[2]                ; Merged with Leds:L2|PWM:P1|Cuenta[2]      ;
+; Leds:L2|PWM:P2|Cuenta[1]                ; Merged with Leds:L2|PWM:P1|Cuenta[1]      ;
+; Leds:L2|PWM:P3|Cuenta[1]                ; Merged with Leds:L2|PWM:P1|Cuenta[1]      ;
+; Leds:L2|PWM:P4|Cuenta[1]                ; Merged with Leds:L2|PWM:P1|Cuenta[1]      ;
+; Leds:L2|PWM:P2|Cuenta[0]                ; Merged with Leds:L2|PWM:P1|Cuenta[0]      ;
+; Leds:L2|PWM:P3|Cuenta[0]                ; Merged with Leds:L2|PWM:P1|Cuenta[0]      ;
+; Leds:L2|PWM:P4|Cuenta[0]                ; Merged with Leds:L2|PWM:P1|Cuenta[0]      ;
+; Leds:L2|a1[1,2,4,7]                     ; Merged with Leds:L2|a1[0]                 ;
+; Leds:L1|PWM:P2|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P3|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P4|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P5|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P6|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P7|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P8|Cuenta[7]                ; Merged with Leds:L1|PWM:P1|Cuenta[7]      ;
+; Leds:L1|PWM:P2|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P3|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P4|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P5|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P6|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P7|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P8|Cuenta[6]                ; Merged with Leds:L1|PWM:P1|Cuenta[6]      ;
+; Leds:L1|PWM:P2|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P3|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P4|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P5|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P6|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P7|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P8|Cuenta[5]                ; Merged with Leds:L1|PWM:P1|Cuenta[5]      ;
+; Leds:L1|PWM:P2|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P3|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P4|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P5|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P6|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P7|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P8|Cuenta[4]                ; Merged with Leds:L1|PWM:P1|Cuenta[4]      ;
+; Leds:L1|PWM:P2|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P3|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P4|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P5|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P6|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P7|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P8|Cuenta[3]                ; Merged with Leds:L1|PWM:P1|Cuenta[3]      ;
+; Leds:L1|PWM:P2|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P3|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P4|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P5|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P6|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P7|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P8|Cuenta[2]                ; Merged with Leds:L1|PWM:P1|Cuenta[2]      ;
+; Leds:L1|PWM:P2|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P3|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P4|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P5|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P6|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P7|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P8|Cuenta[1]                ; Merged with Leds:L1|PWM:P1|Cuenta[1]      ;
+; Leds:L1|PWM:P2|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P3|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P4|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P5|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P6|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P7|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|PWM:P8|Cuenta[0]                ; Merged with Leds:L1|PWM:P1|Cuenta[0]      ;
+; Leds:L1|a1[1,2,4,7]                     ; Merged with Leds:L1|a1[0]                 ;
+; Leds:L2|a3[1,2,4,7]                     ; Merged with Leds:L2|a3[0]                 ;
+; Leds:L1|a3[1,2,4,7]                     ; Merged with Leds:L1|a3[0]                 ;
+; Leds:L2|a5[1,2,4,7]                     ; Merged with Leds:L2|a5[0]                 ;
+; Leds:L1|a5[1,2,4,7]                     ; Merged with Leds:L1|a5[0]                 ;
+; Leds:L1|a6[1,2,4,7]                     ; Merged with Leds:L1|a6[0]                 ;
+; Leds:L2|a6[1,2,4,7]                     ; Merged with Leds:L2|a6[0]                 ;
+; Leds:L2|a2[1,2,4,7]                     ; Merged with Leds:L2|a2[0]                 ;
+; Leds:L2|a4[1,2,4,7]                     ; Merged with Leds:L2|a4[0]                 ;
+; Leds:L1|a2[1,2,4,7]                     ; Merged with Leds:L1|a2[0]                 ;
+; Leds:L1|a4[1,2,4,7]                     ; Merged with Leds:L1|a4[0]                 ;
+; Leds:L2|a8[1,2,4,7]                     ; Merged with Leds:L2|a8[0]                 ;
+; Leds:L2|a7[1,2,4,7]                     ; Merged with Leds:L2|a7[0]                 ;
+; Leds:L1|a7[1,2,4,7]                     ; Merged with Leds:L1|a7[0]                 ;
+; Leds:L1|a8[1,2,4,7]                     ; Merged with Leds:L1|a8[0]                 ;
+; Leds:L1|Divisor:R1|cuenta[0]            ; Merged with Leds:L2|Divisor:R2|cuenta[0]  ;
+; Leds:L1|Divisor:R2|cuenta[0]            ; Merged with Leds:L2|Divisor:R2|cuenta[0]  ;
+; Leds:L2|Divisor:R1|cuenta[0]            ; Merged with Leds:L2|Divisor:R2|cuenta[0]  ;
+; Leds:L1|Divisor:R1|cuenta[1]            ; Merged with Leds:L2|Divisor:R2|cuenta[1]  ;
+; Leds:L1|Divisor:R2|cuenta[1]            ; Merged with Leds:L2|Divisor:R2|cuenta[1]  ;
+; Leds:L2|Divisor:R1|cuenta[1]            ; Merged with Leds:L2|Divisor:R2|cuenta[1]  ;
+; Leds:L1|Divisor:R1|cuenta[2]            ; Merged with Leds:L2|Divisor:R2|cuenta[2]  ;
+; Leds:L1|Divisor:R2|cuenta[2]            ; Merged with Leds:L2|Divisor:R2|cuenta[2]  ;
+; Leds:L2|Divisor:R1|cuenta[2]            ; Merged with Leds:L2|Divisor:R2|cuenta[2]  ;
+; Leds:L1|Divisor:R1|cuenta[3]            ; Merged with Leds:L2|Divisor:R2|cuenta[3]  ;
+; Leds:L2|Divisor:R1|cuenta[3]            ; Merged with Leds:L2|Divisor:R2|cuenta[3]  ;
+; Leds:L1|Divisor:R2|cuenta[3]            ; Merged with Leds:L2|Divisor:R2|cuenta[3]  ;
+; Leds:L1|Divisor:R1|cuenta[4]            ; Merged with Leds:L2|Divisor:R2|cuenta[4]  ;
+; Leds:L2|Divisor:R1|cuenta[4]            ; Merged with Leds:L2|Divisor:R2|cuenta[4]  ;
+; Leds:L1|Divisor:R2|cuenta[4]            ; Merged with Leds:L2|Divisor:R2|cuenta[4]  ;
+; Leds:L1|Divisor:R1|cuenta[5]            ; Merged with Leds:L2|Divisor:R2|cuenta[5]  ;
+; Leds:L1|Divisor:R2|cuenta[5]            ; Merged with Leds:L2|Divisor:R2|cuenta[5]  ;
+; Leds:L2|Divisor:R1|cuenta[5]            ; Merged with Leds:L2|Divisor:R2|cuenta[5]  ;
+; Leds:L1|Divisor:R1|cuenta[6]            ; Merged with Leds:L2|Divisor:R2|cuenta[6]  ;
+; Leds:L2|Divisor:R1|cuenta[6]            ; Merged with Leds:L2|Divisor:R2|cuenta[6]  ;
+; Leds:L1|Divisor:R2|cuenta[6]            ; Merged with Leds:L2|Divisor:R2|cuenta[6]  ;
+; Leds:L1|Divisor:R1|cuenta[7]            ; Merged with Leds:L2|Divisor:R2|cuenta[7]  ;
+; Leds:L1|Divisor:R2|cuenta[7]            ; Merged with Leds:L2|Divisor:R2|cuenta[7]  ;
+; Leds:L2|Divisor:R1|cuenta[7]            ; Merged with Leds:L2|Divisor:R2|cuenta[7]  ;
+; Leds:L1|Divisor:R2|cuenta[8]            ; Merged with Leds:L2|Divisor:R2|cuenta[8]  ;
+; Leds:L1|Divisor:R1|cuenta[8]            ; Merged with Leds:L2|Divisor:R2|cuenta[8]  ;
+; Leds:L2|Divisor:R1|cuenta[8]            ; Merged with Leds:L2|Divisor:R2|cuenta[8]  ;
+; Leds:L1|Divisor:R1|cuenta[9]            ; Merged with Leds:L2|Divisor:R2|cuenta[9]  ;
+; Leds:L1|Divisor:R2|cuenta[9]            ; Merged with Leds:L2|Divisor:R2|cuenta[9]  ;
+; Leds:L2|Divisor:R1|cuenta[9]            ; Merged with Leds:L2|Divisor:R2|cuenta[9]  ;
+; Leds:L1|Divisor:R2|cuenta[10]           ; Merged with Leds:L2|Divisor:R2|cuenta[10] ;
+; Leds:L1|Divisor:R2|cuenta[11]           ; Merged with Leds:L2|Divisor:R2|cuenta[11] ;
+; Leds:L1|Divisor:R2|cuenta[12]           ; Merged with Leds:L2|Divisor:R2|cuenta[12] ;
+; Leds:L1|Divisor:R2|cuenta[13]           ; Merged with Leds:L2|Divisor:R2|cuenta[13] ;
+; Leds:L1|Divisor:R2|cuenta[14]           ; Merged with Leds:L2|Divisor:R2|cuenta[14] ;
+; Leds:L1|Divisor:R2|cuenta[15]           ; Merged with Leds:L2|Divisor:R2|cuenta[15] ;
+; Leds:L1|Divisor:R2|cuenta[16]           ; Merged with Leds:L2|Divisor:R2|cuenta[16] ;
+; Leds:L1|Divisor:R2|cuenta[17]           ; Merged with Leds:L2|Divisor:R2|cuenta[17] ;
+; Leds:L1|Divisor:R2|cuenta[18]           ; Merged with Leds:L2|Divisor:R2|cuenta[18] ;
+; Leds:L1|Divisor:R2|cuenta[19]           ; Merged with Leds:L2|Divisor:R2|cuenta[19] ;
+; Leds:L1|Divisor:R2|cuenta[20]           ; Merged with Leds:L2|Divisor:R2|cuenta[20] ;
+; Leds:L1|Divisor:R2|cuenta[21]           ; Merged with Leds:L2|Divisor:R2|cuenta[21] ;
+; Leds:L1|Divisor:R2|cuenta[22]           ; Merged with Leds:L2|Divisor:R2|cuenta[22] ;
+; Leds:L2|Divisor:R1|cuenta[11..27]       ; Lost fanout                               ;
+; Leds:L1|Divisor:R1|cuenta[11..27]       ; Lost fanout                               ;
+; Leds:L2|Divisor:R2|cuenta[24..27]       ; Lost fanout                               ;
+; Leds:L1|Divisor:R2|cuenta[24..27]       ; Lost fanout                               ;
+; Total Number of Removed Registers = 229 ;                                           ;
++-----------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 171   ;
+; Number of registers using Synchronous Clear  ; 29    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; Leds:L1|a1[3]                           ; 3       ;
+; Leds:L2|a1[3]                           ; 3       ;
+; Leds:L1|a2[5]                           ; 3       ;
+; Leds:L2|a2[5]                           ; 3       ;
+; Leds:L1|a3[6]                           ; 3       ;
+; Leds:L1|a3[5]                           ; 3       ;
+; Leds:L2|a3[6]                           ; 3       ;
+; Leds:L2|a3[5]                           ; 3       ;
+; Leds:L1|a4[0]                           ; 4       ;
+; Leds:L1|a4[6]                           ; 3       ;
+; Leds:L1|a4[5]                           ; 3       ;
+; Leds:L1|a4[3]                           ; 3       ;
+; Leds:L2|a4[0]                           ; 4       ;
+; Leds:L2|a4[6]                           ; 3       ;
+; Leds:L2|a4[5]                           ; 3       ;
+; Leds:L2|a4[3]                           ; 3       ;
+; Total number of inverted registers = 16 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |comp|RX:R1|INDICE[0]      ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |comp|RX:R1|PRE[6]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |comp|foquitos[2]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Leds:L1|Divisor:R1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 10    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Leds:L1|Divisor:R2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 23    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Leds:L2|Divisor:R1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 10    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Leds:L2|Divisor:R2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; n              ; 23    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Leds:L2"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; led5 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; led6 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; led7 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; led8 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 14                          ;
+; cycloneiii_ff         ; 171                         ;
+;     ENA               ; 8                           ;
+;     ENA SCLR          ; 13                          ;
+;     SCLR              ; 16                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 133                         ;
+; cycloneiii_lcell_comb ; 339                         ;
+;     arith             ; 114                         ;
+;         2 data inputs ; 108                         ;
+;         3 data inputs ; 6                           ;
+;     normal            ; 225                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 130                         ;
+;         4 data inputs ; 74                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.10                        ;
+; Average LUT depth     ; 3.39                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Oct 22 21:40:19 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off comp -c comp
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ramse/downloads/p5/pwm.vhd
+    Info (12022): Found design unit 1: PWM-Behavioral File: C:/Users/ramse/Downloads/p5/pwm.vhd Line: 12
+    Info (12023): Found entity 1: PWM File: C:/Users/ramse/Downloads/p5/pwm.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ramse/downloads/p5/leds.vhd
+    Info (12022): Found design unit 1: Leds-Behavioral File: C:/Users/ramse/Downloads/p5/leds.vhd Line: 18
+    Info (12023): Found entity 1: Leds File: C:/Users/ramse/Downloads/p5/leds.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ramse/downloads/p5/divisor.vhd
+    Info (12022): Found design unit 1: Divisor-Behavioral File: C:/Users/ramse/Downloads/p5/divisor.vhd Line: 12
+    Info (12023): Found entity 1: Divisor File: C:/Users/ramse/Downloads/p5/divisor.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ramse/downloads/p9/rx.vhd
+    Info (12022): Found design unit 1: RX-behaivoral File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 11
+    Info (12023): Found entity 1: RX File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ramse/downloads/p9/output_files/comp.vhd
+    Info (12022): Found design unit 1: comp-Behavioral File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 14
+    Info (12023): Found entity 1: comp File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/ledspwm.vhd
+    Info (12022): Found design unit 1: Ledspwm-Behavioral File: C:/Users/ramse/Downloads/p9/aaa/output_files/Ledspwm.vhd Line: 14
+    Info (12023): Found entity 1: Ledspwm File: C:/Users/ramse/Downloads/p9/aaa/output_files/Ledspwm.vhd Line: 6
+Info (12127): Elaborating entity "comp" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at comp.vhd(56): signal "estadoDS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at comp.vhd(57): signal "estadoDS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at comp.vhd(58): signal "estadoDS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at comp.vhd(59): signal "estadoDS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at comp.vhd(65): signal "ld1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at comp.vhd(66): signal "ld2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at comp.vhd(67): signal "ld3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at comp.vhd(68): signal "ld4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 68
+Warning (10492): VHDL Process Statement warning at comp.vhd(69): signal "ld5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at comp.vhd(70): signal "ld6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 70
+Warning (10492): VHDL Process Statement warning at comp.vhd(71): signal "ld7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 71
+Warning (10492): VHDL Process Statement warning at comp.vhd(72): signal "ld8" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at comp.vhd(74): signal "lpwm1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 74
+Warning (10492): VHDL Process Statement warning at comp.vhd(75): signal "lpwm2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 75
+Warning (10492): VHDL Process Statement warning at comp.vhd(76): signal "lpwm3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at comp.vhd(77): signal "lpwm4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 77
+Warning (10631): VHDL Process Statement warning at comp.vhd(53): inferring latch(es) for signal or variable "foquitos", which holds its previous value in one or more paths through the process File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[0]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[1]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[2]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[3]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[4]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[5]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[6]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (10041): Inferred latch for "foquitos[7]" at comp.vhd(53) File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+Info (12128): Elaborating entity "RX" for hierarchy "RX:R1" File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 49
+Info (12128): Elaborating entity "Leds" for hierarchy "Leds:L1" File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 50
+Info (12128): Elaborating entity "Divisor" for hierarchy "Leds:L1|Divisor:R1" File: C:/Users/ramse/Downloads/p5/leds.vhd Line: 41
+Info (12128): Elaborating entity "Divisor" for hierarchy "Leds:L1|Divisor:R2" File: C:/Users/ramse/Downloads/p5/leds.vhd Line: 42
+Info (12128): Elaborating entity "PWM" for hierarchy "Leds:L1|PWM:P1" File: C:/Users/ramse/Downloads/p5/leds.vhd Line: 43
+Warning (13012): Latch foquitos[0]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[1]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[2]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[3]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[4]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[5]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[6]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Warning (13012): Latch foquitos[7]$latch has unsafe behavior File: C:/Users/ramse/Downloads/p9/output_files/comp.vhd Line: 53
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal RX:R1|LEDS[1] File: C:/Users/ramse/Downloads/p9/RX.vhd Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 42 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 369 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 355 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Mon Oct 22 21:40:31 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:23
+
+

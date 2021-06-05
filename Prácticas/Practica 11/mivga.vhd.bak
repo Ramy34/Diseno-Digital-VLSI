@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mivga is
+	port( clk50MHz : in std_logic;
+			red : out std_logic_vector(3 downto 0);
+			green : out std_logic_vector(3 downto 0);
+			blue : out std_logic_vector(3 downto 0);
+			h_sync : out std_logic;
+			v_sync : out std_logic;
+			dipsw : in std_logic_vector(3 downto 0);
+			a,b,c,d,e,f,g : out std_logic);
+end entity mivga;
+
+architecture behaivoral of mivga is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end architecture behaivoral;

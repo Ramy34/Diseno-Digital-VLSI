@@ -1,0 +1,5 @@
+# begin LFP file C:\Users\alumno\Documents\VLSI GRUPO 4\Practica_1\reldig.lfp
+designfile P1.vhd
+parttype xc3s200-5-ft256
+bus_delimiter 8;
+set_busdelim_onsave 1;

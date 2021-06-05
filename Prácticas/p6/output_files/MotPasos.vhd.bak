@@ -1,0 +1,325 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+entity MotPasos is
+   port ( clk  : in STD_LOGIC;
+          UD : in STD_LOGIC;
+          rst : in STD_LOGIC;
+          FH : in STD_LOGIC_VECTOR(1 downto 0);
+          led : out STD_LOGIC_VECTOR(3 downto 0);
+          MOT : out STD_LOGIC_VECTOR(3 downto 0) );
+end MotPasos;
+architecture behavioral of MotPasos is
+signal div : std_logic_vector(17 downto 0);
+signal clks : std_logic;
+type estado is(sm0,sm1, sm2, sm3, sm4, sm5, sm6, sm7, sm8,
+                  sm9, sm10);
+   signal pres_S, next_s : estado;
+signal motor : std_logic_vector(3 downto 0);
+begin
+process (Clk,rst)
+begin
+   if rst='0' then
+      div <= (others=>'0');
+   elsif Clk'event and Clk='1' then
+      div <= div + 1;
+   end if;
+end process;
+clks <= div(17);
+process (clks,rst)
+begin
+   if rst='0' then
+      pres_S <= sm0;
+   elsif clks'event and clks='1' then
+      pres_S <= next_s;
+   end if;
+end process;
+process (pres_S,UD,rst,FH)
+begin
+   case(pres_S) is
+      when sm0 =>						-- Estado 0
+         next_s <= sm1;
+      when sm1 =>						-- Estado 1
+         if FH="00" then ---motor bipolar
+            if UD='1' then
+               next_s <= sm3;
+            else
+               next_s <= sm7;
+            end if;
+         elsif FH="01" then
+            if UD='1' then
+               next_s <= sm2;
+            else
+               next_s <= sm8;
+            end if;
+         elsif FH="10" then
+            if UD='1' then
+               next_s <= sm2;
+            else
+               next_s <= sm8;
+            end if;
+         elsif FH="11" then
+            if UD='1' then
+               next_s <= sm9;
+            else
+               next_s <= sm4;
+            end if;
+         else
+            next_s <= sm1;
+         end if;
+      when sm2 =>						-- Estado 2
+         if FH="00" then
+            if UD='1' then
+               next_s <= sm1;
+            else
+               next_s <= sm7;
+            end if;
+          elsif FH="01" then
+      if UD='1' then
+         next_s <= sm4;
+      else
+         next_s <= sm8;
+      end if;
+   elsif FH="10" then
+      if UD='1' then
+         next_s <= sm3;
+      else
+         next_s <= sm1;
+      end if;
+   elsif FH="11" then
+      if UD='1' then
+         next_s <= sm9;
+      else
+         next_s <= sm4;
+      end if;
+   else
+      next_s <= sm2;
+   end if;
+when sm3 =>					-- Estado 3
+   if FH="00" then
+      if UD='1' then
+         next_s <= sm5;
+      else
+         next_s <= sm1;
+      end if;
+   elsif FH="01" then
+      if UD='1' then
+         next_s <= sm2;
+      else
+         next_s <= sm8;
+      end if;
+   elsif FH="10" then
+      if UD='1' then
+         next_s <= sm4;
+      else
+         next_s <= sm2;
+      end if;
+   elsif FH="11" then
+      if UD='1' then
+         next_s <= sm9;
+      else
+         next_s <= sm4;
+      end if;
+   else
+      next_s <= sm3;
+end if;   
+   when sm4 =>						-- Estado 4
+      if FH="00" then
+         if UD='1' then
+            next_s <= sm1;
+         else
+            next_s <= sm7;
+         end if;
+      elsif FH="01" then
+         if UD='1' then
+            next_s <= sm6;
+         else
+            next_s <= sm2;
+         end if;
+      elsif FH="10" then
+         if UD='1' then
+            next_s <= sm5;
+         else
+            next_s <= sm3;
+         end if;
+      elsif FH="11" then
+         if UD='1' then
+            next_s <= sm9;
+         else
+            next_s <= sm10;
+end if; else
+         next_s <= sm4;
+end if;
+   when sm5 =>						-- Estado 5
+      if FH="00" then
+         if UD='1' then
+            next_s <= sm7;
+         else
+            next_s <= sm3;
+         end if;
+      elsif FH="01" then
+         if UD='1' then
+            next_s <= sm2;
+         else
+            next_s <= sm8;
+         end if;
+      elsif FH="10" then
+         if UD='1' then
+            next_s <= sm6;
+         else
+            next_s <= sm4;
+         end if;
+      elsif FH="11" then
+         if UD='1' then
+            next_s <= sm9;
+         else
+            next_s <= sm4;
+         end if;
+          else
+      next_s <= sm3;
+   end if;
+when sm6 =>						-- Estado 6
+   if FH="00" then
+      if UD='1' then
+         next_s <= sm1;
+      else
+         next_s <= sm7;
+      end if;
+   elsif FH="01" then
+      if UD='1' then
+         next_s <= sm8;
+      else
+         next_s <= sm4;
+      end if;
+   elsif FH="10" then
+      if UD='1' then
+         next_s <= sm7;
+      else
+         next_s <= sm5;
+      end if;
+   elsif FH="11" then
+      if UD='1' then
+         next_s <= sm9;
+      else
+         next_s <= sm4;
+      end if;
+   else
+      next_s <= sm7;
+   end if;
+when sm7 =>						-- Estado 7
+   if FH="00" then
+      if UD='1' then
+         next_s <= sm1;
+      else
+         next_s <= sm5;
+      end if;
+   elsif FH="01" then
+      if UD='1' then
+         next_s <= sm2;
+      else
+         next_s <= sm8;
+      end if;
+   elsif FH="10" then
+      if UD='1' then
+         next_s <= sm8;
+      else
+         next_s <= sm6;
+      end if;
+      elsif FH="11" then
+      if UD='1' then
+         next_s <= sm9;
+      else
+         next_s <= sm4;
+      end if;
+   else
+      next_s <= sm7;
+   end if;
+when sm8 =>					-- Estado 8
+   if FH="00" then
+      if UD='1' then
+         next_s <= sm1;
+      else
+         next_s <= sm7;
+      end if;
+   elsif FH="01" then
+      if UD='1' then
+         next_s <= sm2;
+      else
+         next_s <= sm6;
+      end if;
+   elsif FH="10" then
+      if UD='1' then
+         next_s <= sm1;
+      else
+         next_s <= sm7;
+      end if;
+   elsif FH="11" then
+      if UD='1' then
+         next_s <= sm10;
+      else
+         next_s <= sm9;
+      end if;
+   else
+      next_s <= sm8;
+   end if;
+when sm9=>				-- Estado 9
+   if FH="00" then
+      if UD='1' then
+         next_s <= sm1;
+      else
+         next_s <= sm7;
+      end if;
+   elsif FH="01" then
+      if UD='1' then
+         next_s <= sm2;
+      else
+         next_s <= sm8;
+      end if;
+
+     elsif FH="10" then
+            if UD='1' then
+               next_s <= sm1;
+            else
+               next_s <= sm8;
+            end if;
+         elsif FH="11" then
+            if UD='1' then
+               next_s <= sm8;
+            else
+               next_s <= sm4;
+            end if;
+         else
+            next_s <= sm9;
+         end if;
+      when sm10 =>					-- Estado 10
+         if FH="00" then
+            if UD='1' then
+               next_s <= sm1;
+            else
+               next_s <= sm7;
+            end if;
+         elsif FH="01" then
+            if UD='1' then
+               next_s <= sm2;
+            else
+               next_s <= sm8;
+            end if;
+         elsif FH="10" then
+            if UD='1' then
+               next_s <= sm1;
+            else
+               next_s <= sm8;
+            end if;
+         elsif FH="11" then
+            if UD='1' then
+               next_s <= sm4;
+            else
+               next_s <= sm8;
+            end if;
+         else
+            next_s <= sm10;
+         end if;
+      when others => next_s <= sm0;
+   end case;
+end process;

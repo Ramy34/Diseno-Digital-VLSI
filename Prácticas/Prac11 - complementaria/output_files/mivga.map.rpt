@@ -1,0 +1,957 @@
+Analysis & Synthesis report for mivga
+Wed Nov 07 17:12:40 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Nov 07 17:12:40 2018       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; mivga                                       ;
+; Top-level Entity Name              ; mivga                                       ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 277                                         ;
+;     Total combinational functions  ; 258                                         ;
+;     Dedicated logic registers      ; 78                                          ;
+; Total registers                    ; 78                                          ;
+; Total pins                         ; 22                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; mivga              ; mivga              ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; mivga.vhd                        ; yes             ; User VHDL File  ; C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 277         ;
+;                                             ;             ;
+; Total combinational functions               ; 258         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 140         ;
+;     -- 3 input functions                    ; 46          ;
+;     -- <=2 input functions                  ; 72          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 216         ;
+;     -- arithmetic mode                      ; 42          ;
+;                                             ;             ;
+; Total registers                             ; 78          ;
+;     -- Dedicated logic registers            ; 78          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 22          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reloj_pixel ;
+; Maximum fan-out                             ; 45          ;
+; Total fan-out                               ; 1084        ;
+; Average fan-out                             ; 2.85        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |mivga                     ; 258 (258)           ; 78 (78)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 22   ; 0            ; 0          ; |mivga              ; mivga       ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; red[0]$latch                                        ; display_ena         ; yes                    ;
+; red[1]$latch                                        ; display_ena         ; yes                    ;
+; red[2]$latch                                        ; display_ena         ; yes                    ;
+; red[3]$latch                                        ; display_ena         ; yes                    ;
+; green[0]$latch                                      ; display_ena         ; yes                    ;
+; green[1]$latch                                      ; display_ena         ; yes                    ;
+; green[2]$latch                                      ; display_ena         ; yes                    ;
+; green[3]$latch                                      ; display_ena         ; yes                    ;
+; blue[0]$latch                                       ; display_ena         ; yes                    ;
+; blue[1]$latch                                       ; display_ena         ; yes                    ;
+; blue[2]$latch                                       ; display_ena         ; yes                    ;
+; blue[3]$latch                                       ; display_ena         ; yes                    ;
+; Number of user-specified and inferred latches = 12  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; row[10..30]                            ; Stuck at GND due to stuck port data_in ;
+; column[10..30]                         ; Stuck at GND due to stuck port data_in ;
+; row[9]                                 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 43 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; row[31]                                ; 3       ;
+; row[0]                                 ; 4       ;
+; column[31]                             ; 2       ;
+; column[0]                              ; 3       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 152:1              ; 2 bits    ; 202 LEs       ; 10 LEs               ; 192 LEs                ; No         ; |mivga|Mux94               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 22                          ;
+; cycloneiii_ff         ; 78                          ;
+;     ENA               ; 21                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 10                          ;
+;     plain             ; 37                          ;
+; cycloneiii_lcell_comb ; 259                         ;
+;     arith             ; 42                          ;
+;         2 data inputs ; 42                          ;
+;     normal            ; 217                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 46                          ;
+;         4 data inputs ; 140                         ;
+;                       ;                             ;
+; Max LUT depth         ; 13.00                       ;
+; Average LUT depth     ; 7.28                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Nov 07 17:12:17 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mivga -c mivga
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file mivga.vhd
+    Info (12022): Found design unit 1: mivga-behaivoral File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 16
+    Info (12023): Found entity 1: mivga File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 6
+Info (12127): Elaborating entity "mivga" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at mivga.vhd(46): used explicit default value for signal "h_period" because signal was never assigned a value File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 46
+Warning (10540): VHDL Signal Declaration warning at mivga.vhd(47): used explicit default value for signal "v_period" because signal was never assigned a value File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at mivga.vhd(268): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 268
+Warning (10492): VHDL Process Statement warning at mivga.vhd(269): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 269
+Warning (10492): VHDL Process Statement warning at mivga.vhd(270): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 270
+Warning (10492): VHDL Process Statement warning at mivga.vhd(271): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 271
+Warning (10492): VHDL Process Statement warning at mivga.vhd(272): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 272
+Warning (10492): VHDL Process Statement warning at mivga.vhd(273): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 273
+Warning (10492): VHDL Process Statement warning at mivga.vhd(274): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 274
+Warning (10492): VHDL Process Statement warning at mivga.vhd(275): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 275
+Warning (10492): VHDL Process Statement warning at mivga.vhd(276): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 276
+Warning (10492): VHDL Process Statement warning at mivga.vhd(277): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 277
+Warning (10492): VHDL Process Statement warning at mivga.vhd(278): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 278
+Warning (10492): VHDL Process Statement warning at mivga.vhd(279): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 279
+Warning (10492): VHDL Process Statement warning at mivga.vhd(281): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 281
+Warning (10492): VHDL Process Statement warning at mivga.vhd(282): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 282
+Warning (10492): VHDL Process Statement warning at mivga.vhd(283): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 283
+Warning (10492): VHDL Process Statement warning at mivga.vhd(284): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 284
+Warning (10492): VHDL Process Statement warning at mivga.vhd(285): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 285
+Warning (10492): VHDL Process Statement warning at mivga.vhd(286): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 286
+Warning (10492): VHDL Process Statement warning at mivga.vhd(287): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 287
+Warning (10492): VHDL Process Statement warning at mivga.vhd(288): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 288
+Warning (10492): VHDL Process Statement warning at mivga.vhd(289): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 289
+Warning (10492): VHDL Process Statement warning at mivga.vhd(290): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 290
+Warning (10492): VHDL Process Statement warning at mivga.vhd(291): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 291
+Warning (10492): VHDL Process Statement warning at mivga.vhd(292): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 292
+Warning (10492): VHDL Process Statement warning at mivga.vhd(294): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 294
+Warning (10492): VHDL Process Statement warning at mivga.vhd(295): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at mivga.vhd(296): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 296
+Warning (10492): VHDL Process Statement warning at mivga.vhd(297): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 297
+Warning (10492): VHDL Process Statement warning at mivga.vhd(298): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 298
+Warning (10492): VHDL Process Statement warning at mivga.vhd(299): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 299
+Warning (10492): VHDL Process Statement warning at mivga.vhd(300): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 300
+Warning (10492): VHDL Process Statement warning at mivga.vhd(301): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 301
+Warning (10492): VHDL Process Statement warning at mivga.vhd(302): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 302
+Warning (10492): VHDL Process Statement warning at mivga.vhd(303): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 303
+Warning (10492): VHDL Process Statement warning at mivga.vhd(304): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 304
+Warning (10492): VHDL Process Statement warning at mivga.vhd(305): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 305
+Warning (10492): VHDL Process Statement warning at mivga.vhd(307): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 307
+Warning (10492): VHDL Process Statement warning at mivga.vhd(308): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 308
+Warning (10492): VHDL Process Statement warning at mivga.vhd(309): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 309
+Warning (10492): VHDL Process Statement warning at mivga.vhd(310): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 310
+Warning (10492): VHDL Process Statement warning at mivga.vhd(311): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 311
+Warning (10492): VHDL Process Statement warning at mivga.vhd(312): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 312
+Warning (10492): VHDL Process Statement warning at mivga.vhd(313): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 313
+Warning (10492): VHDL Process Statement warning at mivga.vhd(314): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 314
+Warning (10492): VHDL Process Statement warning at mivga.vhd(315): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 315
+Warning (10492): VHDL Process Statement warning at mivga.vhd(316): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 316
+Warning (10492): VHDL Process Statement warning at mivga.vhd(317): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 317
+Warning (10492): VHDL Process Statement warning at mivga.vhd(318): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 318
+Warning (10492): VHDL Process Statement warning at mivga.vhd(320): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 320
+Warning (10492): VHDL Process Statement warning at mivga.vhd(321): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 321
+Warning (10492): VHDL Process Statement warning at mivga.vhd(322): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 322
+Warning (10492): VHDL Process Statement warning at mivga.vhd(323): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 323
+Warning (10492): VHDL Process Statement warning at mivga.vhd(324): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 324
+Warning (10492): VHDL Process Statement warning at mivga.vhd(325): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 325
+Warning (10492): VHDL Process Statement warning at mivga.vhd(326): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 326
+Warning (10492): VHDL Process Statement warning at mivga.vhd(327): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 327
+Warning (10492): VHDL Process Statement warning at mivga.vhd(328): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 328
+Warning (10492): VHDL Process Statement warning at mivga.vhd(329): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 329
+Warning (10492): VHDL Process Statement warning at mivga.vhd(330): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 330
+Warning (10492): VHDL Process Statement warning at mivga.vhd(331): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 331
+Warning (10492): VHDL Process Statement warning at mivga.vhd(333): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 333
+Warning (10492): VHDL Process Statement warning at mivga.vhd(334): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 334
+Warning (10492): VHDL Process Statement warning at mivga.vhd(335): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 335
+Warning (10492): VHDL Process Statement warning at mivga.vhd(336): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 336
+Warning (10492): VHDL Process Statement warning at mivga.vhd(337): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 337
+Warning (10492): VHDL Process Statement warning at mivga.vhd(338): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 338
+Warning (10492): VHDL Process Statement warning at mivga.vhd(339): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 339
+Warning (10492): VHDL Process Statement warning at mivga.vhd(340): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 340
+Warning (10492): VHDL Process Statement warning at mivga.vhd(341): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 341
+Warning (10492): VHDL Process Statement warning at mivga.vhd(342): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 342
+Warning (10492): VHDL Process Statement warning at mivga.vhd(343): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 343
+Warning (10492): VHDL Process Statement warning at mivga.vhd(344): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 344
+Warning (10492): VHDL Process Statement warning at mivga.vhd(352): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 352
+Warning (10492): VHDL Process Statement warning at mivga.vhd(353): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 353
+Warning (10492): VHDL Process Statement warning at mivga.vhd(354): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 354
+Warning (10492): VHDL Process Statement warning at mivga.vhd(355): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 355
+Warning (10492): VHDL Process Statement warning at mivga.vhd(356): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 356
+Warning (10492): VHDL Process Statement warning at mivga.vhd(357): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 357
+Warning (10492): VHDL Process Statement warning at mivga.vhd(358): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 358
+Warning (10492): VHDL Process Statement warning at mivga.vhd(359): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 359
+Warning (10492): VHDL Process Statement warning at mivga.vhd(360): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 360
+Warning (10492): VHDL Process Statement warning at mivga.vhd(361): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 361
+Warning (10492): VHDL Process Statement warning at mivga.vhd(362): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 362
+Warning (10492): VHDL Process Statement warning at mivga.vhd(363): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 363
+Warning (10492): VHDL Process Statement warning at mivga.vhd(365): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 365
+Warning (10492): VHDL Process Statement warning at mivga.vhd(366): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 366
+Warning (10492): VHDL Process Statement warning at mivga.vhd(367): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 367
+Warning (10492): VHDL Process Statement warning at mivga.vhd(368): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 368
+Warning (10492): VHDL Process Statement warning at mivga.vhd(369): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 369
+Warning (10492): VHDL Process Statement warning at mivga.vhd(370): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 370
+Warning (10492): VHDL Process Statement warning at mivga.vhd(371): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 371
+Warning (10492): VHDL Process Statement warning at mivga.vhd(372): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 372
+Warning (10492): VHDL Process Statement warning at mivga.vhd(373): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 373
+Warning (10492): VHDL Process Statement warning at mivga.vhd(374): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 374
+Warning (10492): VHDL Process Statement warning at mivga.vhd(375): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 375
+Warning (10492): VHDL Process Statement warning at mivga.vhd(376): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 376
+Warning (10492): VHDL Process Statement warning at mivga.vhd(384): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 384
+Warning (10492): VHDL Process Statement warning at mivga.vhd(385): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 385
+Warning (10492): VHDL Process Statement warning at mivga.vhd(386): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 386
+Warning (10492): VHDL Process Statement warning at mivga.vhd(387): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 387
+Warning (10492): VHDL Process Statement warning at mivga.vhd(388): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 388
+Warning (10492): VHDL Process Statement warning at mivga.vhd(389): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 389
+Warning (10492): VHDL Process Statement warning at mivga.vhd(390): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 390
+Warning (10492): VHDL Process Statement warning at mivga.vhd(391): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 391
+Warning (10492): VHDL Process Statement warning at mivga.vhd(392): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 392
+Warning (10492): VHDL Process Statement warning at mivga.vhd(393): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 393
+Warning (10492): VHDL Process Statement warning at mivga.vhd(394): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 394
+Warning (10492): VHDL Process Statement warning at mivga.vhd(395): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 395
+Warning (10492): VHDL Process Statement warning at mivga.vhd(397): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 397
+Warning (10492): VHDL Process Statement warning at mivga.vhd(398): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 398
+Warning (10492): VHDL Process Statement warning at mivga.vhd(399): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 399
+Warning (10492): VHDL Process Statement warning at mivga.vhd(400): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 400
+Warning (10492): VHDL Process Statement warning at mivga.vhd(401): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 401
+Warning (10492): VHDL Process Statement warning at mivga.vhd(402): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 402
+Warning (10492): VHDL Process Statement warning at mivga.vhd(403): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 403
+Warning (10492): VHDL Process Statement warning at mivga.vhd(404): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 404
+Warning (10492): VHDL Process Statement warning at mivga.vhd(405): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 405
+Warning (10492): VHDL Process Statement warning at mivga.vhd(406): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 406
+Warning (10492): VHDL Process Statement warning at mivga.vhd(407): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 407
+Warning (10492): VHDL Process Statement warning at mivga.vhd(408): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 408
+Warning (10492): VHDL Process Statement warning at mivga.vhd(410): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 410
+Warning (10492): VHDL Process Statement warning at mivga.vhd(411): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 411
+Warning (10492): VHDL Process Statement warning at mivga.vhd(412): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 412
+Warning (10492): VHDL Process Statement warning at mivga.vhd(413): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 413
+Warning (10492): VHDL Process Statement warning at mivga.vhd(414): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 414
+Warning (10492): VHDL Process Statement warning at mivga.vhd(415): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 415
+Warning (10492): VHDL Process Statement warning at mivga.vhd(416): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 416
+Warning (10492): VHDL Process Statement warning at mivga.vhd(417): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 417
+Warning (10492): VHDL Process Statement warning at mivga.vhd(418): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 418
+Warning (10492): VHDL Process Statement warning at mivga.vhd(419): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 419
+Warning (10492): VHDL Process Statement warning at mivga.vhd(420): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 420
+Warning (10492): VHDL Process Statement warning at mivga.vhd(421): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 421
+Warning (10492): VHDL Process Statement warning at mivga.vhd(423): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 423
+Warning (10492): VHDL Process Statement warning at mivga.vhd(424): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 424
+Warning (10492): VHDL Process Statement warning at mivga.vhd(425): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 425
+Warning (10492): VHDL Process Statement warning at mivga.vhd(426): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 426
+Warning (10492): VHDL Process Statement warning at mivga.vhd(427): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 427
+Warning (10492): VHDL Process Statement warning at mivga.vhd(428): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 428
+Warning (10492): VHDL Process Statement warning at mivga.vhd(429): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 429
+Warning (10492): VHDL Process Statement warning at mivga.vhd(430): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 430
+Warning (10492): VHDL Process Statement warning at mivga.vhd(431): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 431
+Warning (10492): VHDL Process Statement warning at mivga.vhd(432): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 432
+Warning (10492): VHDL Process Statement warning at mivga.vhd(433): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 433
+Warning (10492): VHDL Process Statement warning at mivga.vhd(434): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 434
+Warning (10492): VHDL Process Statement warning at mivga.vhd(436): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 436
+Warning (10492): VHDL Process Statement warning at mivga.vhd(437): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 437
+Warning (10492): VHDL Process Statement warning at mivga.vhd(438): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 438
+Warning (10492): VHDL Process Statement warning at mivga.vhd(439): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 439
+Warning (10492): VHDL Process Statement warning at mivga.vhd(440): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 440
+Warning (10492): VHDL Process Statement warning at mivga.vhd(441): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 441
+Warning (10492): VHDL Process Statement warning at mivga.vhd(442): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 442
+Warning (10492): VHDL Process Statement warning at mivga.vhd(443): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 443
+Warning (10492): VHDL Process Statement warning at mivga.vhd(444): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 444
+Warning (10492): VHDL Process Statement warning at mivga.vhd(445): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 445
+Warning (10492): VHDL Process Statement warning at mivga.vhd(446): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 446
+Warning (10492): VHDL Process Statement warning at mivga.vhd(447): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 447
+Warning (10492): VHDL Process Statement warning at mivga.vhd(455): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 455
+Warning (10492): VHDL Process Statement warning at mivga.vhd(456): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 456
+Warning (10492): VHDL Process Statement warning at mivga.vhd(457): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 457
+Warning (10492): VHDL Process Statement warning at mivga.vhd(458): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 458
+Warning (10492): VHDL Process Statement warning at mivga.vhd(459): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 459
+Warning (10492): VHDL Process Statement warning at mivga.vhd(460): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 460
+Warning (10492): VHDL Process Statement warning at mivga.vhd(461): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 461
+Warning (10492): VHDL Process Statement warning at mivga.vhd(462): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 462
+Warning (10492): VHDL Process Statement warning at mivga.vhd(463): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 463
+Warning (10492): VHDL Process Statement warning at mivga.vhd(464): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 464
+Warning (10492): VHDL Process Statement warning at mivga.vhd(465): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 465
+Warning (10492): VHDL Process Statement warning at mivga.vhd(466): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 466
+Warning (10492): VHDL Process Statement warning at mivga.vhd(468): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 468
+Warning (10492): VHDL Process Statement warning at mivga.vhd(469): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 469
+Warning (10492): VHDL Process Statement warning at mivga.vhd(470): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 470
+Warning (10492): VHDL Process Statement warning at mivga.vhd(471): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 471
+Warning (10492): VHDL Process Statement warning at mivga.vhd(472): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 472
+Warning (10492): VHDL Process Statement warning at mivga.vhd(473): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 473
+Warning (10492): VHDL Process Statement warning at mivga.vhd(474): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 474
+Warning (10492): VHDL Process Statement warning at mivga.vhd(475): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 475
+Warning (10492): VHDL Process Statement warning at mivga.vhd(476): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 476
+Warning (10492): VHDL Process Statement warning at mivga.vhd(477): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 477
+Warning (10492): VHDL Process Statement warning at mivga.vhd(478): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 478
+Warning (10492): VHDL Process Statement warning at mivga.vhd(479): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 479
+Warning (10492): VHDL Process Statement warning at mivga.vhd(481): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 481
+Warning (10492): VHDL Process Statement warning at mivga.vhd(482): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 482
+Warning (10492): VHDL Process Statement warning at mivga.vhd(483): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 483
+Warning (10492): VHDL Process Statement warning at mivga.vhd(484): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 484
+Warning (10492): VHDL Process Statement warning at mivga.vhd(485): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 485
+Warning (10492): VHDL Process Statement warning at mivga.vhd(486): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 486
+Warning (10492): VHDL Process Statement warning at mivga.vhd(487): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 487
+Warning (10492): VHDL Process Statement warning at mivga.vhd(488): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 488
+Warning (10492): VHDL Process Statement warning at mivga.vhd(489): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 489
+Warning (10492): VHDL Process Statement warning at mivga.vhd(490): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 490
+Warning (10492): VHDL Process Statement warning at mivga.vhd(491): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 491
+Warning (10492): VHDL Process Statement warning at mivga.vhd(492): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 492
+Warning (10492): VHDL Process Statement warning at mivga.vhd(494): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 494
+Warning (10492): VHDL Process Statement warning at mivga.vhd(495): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 495
+Warning (10492): VHDL Process Statement warning at mivga.vhd(496): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 496
+Warning (10492): VHDL Process Statement warning at mivga.vhd(497): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 497
+Warning (10492): VHDL Process Statement warning at mivga.vhd(498): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 498
+Warning (10492): VHDL Process Statement warning at mivga.vhd(499): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 499
+Warning (10492): VHDL Process Statement warning at mivga.vhd(500): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 500
+Warning (10492): VHDL Process Statement warning at mivga.vhd(501): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 501
+Warning (10492): VHDL Process Statement warning at mivga.vhd(502): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 502
+Warning (10492): VHDL Process Statement warning at mivga.vhd(503): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 503
+Warning (10492): VHDL Process Statement warning at mivga.vhd(504): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 504
+Warning (10492): VHDL Process Statement warning at mivga.vhd(505): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 505
+Warning (10492): VHDL Process Statement warning at mivga.vhd(507): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 507
+Warning (10492): VHDL Process Statement warning at mivga.vhd(508): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 508
+Warning (10492): VHDL Process Statement warning at mivga.vhd(509): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 509
+Warning (10492): VHDL Process Statement warning at mivga.vhd(510): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 510
+Warning (10492): VHDL Process Statement warning at mivga.vhd(511): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 511
+Warning (10492): VHDL Process Statement warning at mivga.vhd(512): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 512
+Warning (10492): VHDL Process Statement warning at mivga.vhd(513): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 513
+Warning (10492): VHDL Process Statement warning at mivga.vhd(514): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 514
+Warning (10492): VHDL Process Statement warning at mivga.vhd(515): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 515
+Warning (10492): VHDL Process Statement warning at mivga.vhd(516): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 516
+Warning (10492): VHDL Process Statement warning at mivga.vhd(517): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 517
+Warning (10492): VHDL Process Statement warning at mivga.vhd(518): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 518
+Warning (10492): VHDL Process Statement warning at mivga.vhd(526): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 526
+Warning (10492): VHDL Process Statement warning at mivga.vhd(527): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 527
+Warning (10492): VHDL Process Statement warning at mivga.vhd(528): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 528
+Warning (10492): VHDL Process Statement warning at mivga.vhd(529): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 529
+Warning (10492): VHDL Process Statement warning at mivga.vhd(530): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 530
+Warning (10492): VHDL Process Statement warning at mivga.vhd(531): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 531
+Warning (10492): VHDL Process Statement warning at mivga.vhd(532): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 532
+Warning (10492): VHDL Process Statement warning at mivga.vhd(533): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 533
+Warning (10492): VHDL Process Statement warning at mivga.vhd(534): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 534
+Warning (10492): VHDL Process Statement warning at mivga.vhd(535): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 535
+Warning (10492): VHDL Process Statement warning at mivga.vhd(536): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 536
+Warning (10492): VHDL Process Statement warning at mivga.vhd(537): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 537
+Warning (10492): VHDL Process Statement warning at mivga.vhd(539): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 539
+Warning (10492): VHDL Process Statement warning at mivga.vhd(540): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 540
+Warning (10492): VHDL Process Statement warning at mivga.vhd(541): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 541
+Warning (10492): VHDL Process Statement warning at mivga.vhd(542): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 542
+Warning (10492): VHDL Process Statement warning at mivga.vhd(543): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 543
+Warning (10492): VHDL Process Statement warning at mivga.vhd(544): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 544
+Warning (10492): VHDL Process Statement warning at mivga.vhd(545): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 545
+Warning (10492): VHDL Process Statement warning at mivga.vhd(546): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 546
+Warning (10492): VHDL Process Statement warning at mivga.vhd(547): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 547
+Warning (10492): VHDL Process Statement warning at mivga.vhd(548): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 548
+Warning (10492): VHDL Process Statement warning at mivga.vhd(549): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 549
+Warning (10492): VHDL Process Statement warning at mivga.vhd(550): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 550
+Warning (10492): VHDL Process Statement warning at mivga.vhd(552): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 552
+Warning (10492): VHDL Process Statement warning at mivga.vhd(553): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 553
+Warning (10492): VHDL Process Statement warning at mivga.vhd(554): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 554
+Warning (10492): VHDL Process Statement warning at mivga.vhd(555): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 555
+Warning (10492): VHDL Process Statement warning at mivga.vhd(556): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 556
+Warning (10492): VHDL Process Statement warning at mivga.vhd(557): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 557
+Warning (10492): VHDL Process Statement warning at mivga.vhd(558): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 558
+Warning (10492): VHDL Process Statement warning at mivga.vhd(559): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 559
+Warning (10492): VHDL Process Statement warning at mivga.vhd(560): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 560
+Warning (10492): VHDL Process Statement warning at mivga.vhd(561): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 561
+Warning (10492): VHDL Process Statement warning at mivga.vhd(562): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 562
+Warning (10492): VHDL Process Statement warning at mivga.vhd(563): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 563
+Warning (10492): VHDL Process Statement warning at mivga.vhd(565): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 565
+Warning (10492): VHDL Process Statement warning at mivga.vhd(566): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 566
+Warning (10492): VHDL Process Statement warning at mivga.vhd(567): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 567
+Warning (10492): VHDL Process Statement warning at mivga.vhd(568): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 568
+Warning (10492): VHDL Process Statement warning at mivga.vhd(569): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 569
+Warning (10492): VHDL Process Statement warning at mivga.vhd(570): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 570
+Warning (10492): VHDL Process Statement warning at mivga.vhd(571): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 571
+Warning (10492): VHDL Process Statement warning at mivga.vhd(572): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 572
+Warning (10492): VHDL Process Statement warning at mivga.vhd(573): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 573
+Warning (10492): VHDL Process Statement warning at mivga.vhd(574): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 574
+Warning (10492): VHDL Process Statement warning at mivga.vhd(575): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 575
+Warning (10492): VHDL Process Statement warning at mivga.vhd(576): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 576
+Warning (10492): VHDL Process Statement warning at mivga.vhd(584): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 584
+Warning (10492): VHDL Process Statement warning at mivga.vhd(585): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 585
+Warning (10492): VHDL Process Statement warning at mivga.vhd(586): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 586
+Warning (10492): VHDL Process Statement warning at mivga.vhd(587): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 587
+Warning (10492): VHDL Process Statement warning at mivga.vhd(588): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 588
+Warning (10492): VHDL Process Statement warning at mivga.vhd(589): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 589
+Warning (10492): VHDL Process Statement warning at mivga.vhd(590): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 590
+Warning (10492): VHDL Process Statement warning at mivga.vhd(591): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 591
+Warning (10492): VHDL Process Statement warning at mivga.vhd(592): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 592
+Warning (10492): VHDL Process Statement warning at mivga.vhd(593): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 593
+Warning (10492): VHDL Process Statement warning at mivga.vhd(594): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 594
+Warning (10492): VHDL Process Statement warning at mivga.vhd(595): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 595
+Warning (10492): VHDL Process Statement warning at mivga.vhd(597): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 597
+Warning (10492): VHDL Process Statement warning at mivga.vhd(598): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 598
+Warning (10492): VHDL Process Statement warning at mivga.vhd(599): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 599
+Warning (10492): VHDL Process Statement warning at mivga.vhd(600): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 600
+Warning (10492): VHDL Process Statement warning at mivga.vhd(601): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 601
+Warning (10492): VHDL Process Statement warning at mivga.vhd(602): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 602
+Warning (10492): VHDL Process Statement warning at mivga.vhd(603): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 603
+Warning (10492): VHDL Process Statement warning at mivga.vhd(604): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 604
+Warning (10492): VHDL Process Statement warning at mivga.vhd(605): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 605
+Warning (10492): VHDL Process Statement warning at mivga.vhd(606): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 606
+Warning (10492): VHDL Process Statement warning at mivga.vhd(607): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 607
+Warning (10492): VHDL Process Statement warning at mivga.vhd(608): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 608
+Warning (10492): VHDL Process Statement warning at mivga.vhd(610): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 610
+Warning (10492): VHDL Process Statement warning at mivga.vhd(611): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 611
+Warning (10492): VHDL Process Statement warning at mivga.vhd(612): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 612
+Warning (10492): VHDL Process Statement warning at mivga.vhd(613): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 613
+Warning (10492): VHDL Process Statement warning at mivga.vhd(614): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 614
+Warning (10492): VHDL Process Statement warning at mivga.vhd(615): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 615
+Warning (10492): VHDL Process Statement warning at mivga.vhd(616): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 616
+Warning (10492): VHDL Process Statement warning at mivga.vhd(617): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 617
+Warning (10492): VHDL Process Statement warning at mivga.vhd(618): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 618
+Warning (10492): VHDL Process Statement warning at mivga.vhd(619): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 619
+Warning (10492): VHDL Process Statement warning at mivga.vhd(620): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 620
+Warning (10492): VHDL Process Statement warning at mivga.vhd(621): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 621
+Warning (10492): VHDL Process Statement warning at mivga.vhd(623): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 623
+Warning (10492): VHDL Process Statement warning at mivga.vhd(624): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 624
+Warning (10492): VHDL Process Statement warning at mivga.vhd(625): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 625
+Warning (10492): VHDL Process Statement warning at mivga.vhd(626): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 626
+Warning (10492): VHDL Process Statement warning at mivga.vhd(627): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 627
+Warning (10492): VHDL Process Statement warning at mivga.vhd(628): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 628
+Warning (10492): VHDL Process Statement warning at mivga.vhd(629): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 629
+Warning (10492): VHDL Process Statement warning at mivga.vhd(630): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 630
+Warning (10492): VHDL Process Statement warning at mivga.vhd(631): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 631
+Warning (10492): VHDL Process Statement warning at mivga.vhd(632): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 632
+Warning (10492): VHDL Process Statement warning at mivga.vhd(633): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 633
+Warning (10492): VHDL Process Statement warning at mivga.vhd(634): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 634
+Warning (10492): VHDL Process Statement warning at mivga.vhd(636): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 636
+Warning (10492): VHDL Process Statement warning at mivga.vhd(637): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 637
+Warning (10492): VHDL Process Statement warning at mivga.vhd(638): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 638
+Warning (10492): VHDL Process Statement warning at mivga.vhd(639): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 639
+Warning (10492): VHDL Process Statement warning at mivga.vhd(640): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 640
+Warning (10492): VHDL Process Statement warning at mivga.vhd(641): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 641
+Warning (10492): VHDL Process Statement warning at mivga.vhd(642): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 642
+Warning (10492): VHDL Process Statement warning at mivga.vhd(643): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 643
+Warning (10492): VHDL Process Statement warning at mivga.vhd(644): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 644
+Warning (10492): VHDL Process Statement warning at mivga.vhd(645): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 645
+Warning (10492): VHDL Process Statement warning at mivga.vhd(646): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 646
+Warning (10492): VHDL Process Statement warning at mivga.vhd(647): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 647
+Warning (10492): VHDL Process Statement warning at mivga.vhd(655): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 655
+Warning (10492): VHDL Process Statement warning at mivga.vhd(656): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 656
+Warning (10492): VHDL Process Statement warning at mivga.vhd(657): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 657
+Warning (10492): VHDL Process Statement warning at mivga.vhd(658): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 658
+Warning (10492): VHDL Process Statement warning at mivga.vhd(659): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 659
+Warning (10492): VHDL Process Statement warning at mivga.vhd(660): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 660
+Warning (10492): VHDL Process Statement warning at mivga.vhd(661): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 661
+Warning (10492): VHDL Process Statement warning at mivga.vhd(662): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 662
+Warning (10492): VHDL Process Statement warning at mivga.vhd(663): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 663
+Warning (10492): VHDL Process Statement warning at mivga.vhd(664): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 664
+Warning (10492): VHDL Process Statement warning at mivga.vhd(665): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 665
+Warning (10492): VHDL Process Statement warning at mivga.vhd(666): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 666
+Warning (10492): VHDL Process Statement warning at mivga.vhd(668): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 668
+Warning (10492): VHDL Process Statement warning at mivga.vhd(669): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 669
+Warning (10492): VHDL Process Statement warning at mivga.vhd(670): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 670
+Warning (10492): VHDL Process Statement warning at mivga.vhd(671): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 671
+Warning (10492): VHDL Process Statement warning at mivga.vhd(672): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 672
+Warning (10492): VHDL Process Statement warning at mivga.vhd(673): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 673
+Warning (10492): VHDL Process Statement warning at mivga.vhd(674): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 674
+Warning (10492): VHDL Process Statement warning at mivga.vhd(675): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 675
+Warning (10492): VHDL Process Statement warning at mivga.vhd(676): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 676
+Warning (10492): VHDL Process Statement warning at mivga.vhd(677): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 677
+Warning (10492): VHDL Process Statement warning at mivga.vhd(678): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 678
+Warning (10492): VHDL Process Statement warning at mivga.vhd(679): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 679
+Warning (10492): VHDL Process Statement warning at mivga.vhd(681): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 681
+Warning (10492): VHDL Process Statement warning at mivga.vhd(682): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 682
+Warning (10492): VHDL Process Statement warning at mivga.vhd(683): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 683
+Warning (10492): VHDL Process Statement warning at mivga.vhd(684): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 684
+Warning (10492): VHDL Process Statement warning at mivga.vhd(685): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 685
+Warning (10492): VHDL Process Statement warning at mivga.vhd(686): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 686
+Warning (10492): VHDL Process Statement warning at mivga.vhd(687): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 687
+Warning (10492): VHDL Process Statement warning at mivga.vhd(688): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 688
+Warning (10492): VHDL Process Statement warning at mivga.vhd(689): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 689
+Warning (10492): VHDL Process Statement warning at mivga.vhd(690): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 690
+Warning (10492): VHDL Process Statement warning at mivga.vhd(691): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 691
+Warning (10492): VHDL Process Statement warning at mivga.vhd(692): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 692
+Warning (10492): VHDL Process Statement warning at mivga.vhd(694): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 694
+Warning (10492): VHDL Process Statement warning at mivga.vhd(695): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 695
+Warning (10492): VHDL Process Statement warning at mivga.vhd(696): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 696
+Warning (10492): VHDL Process Statement warning at mivga.vhd(697): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 697
+Warning (10492): VHDL Process Statement warning at mivga.vhd(698): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 698
+Warning (10492): VHDL Process Statement warning at mivga.vhd(699): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 699
+Warning (10492): VHDL Process Statement warning at mivga.vhd(700): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 700
+Warning (10492): VHDL Process Statement warning at mivga.vhd(701): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 701
+Warning (10492): VHDL Process Statement warning at mivga.vhd(702): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 702
+Warning (10492): VHDL Process Statement warning at mivga.vhd(703): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 703
+Warning (10492): VHDL Process Statement warning at mivga.vhd(704): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 704
+Warning (10492): VHDL Process Statement warning at mivga.vhd(705): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 705
+Warning (10492): VHDL Process Statement warning at mivga.vhd(707): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 707
+Warning (10492): VHDL Process Statement warning at mivga.vhd(708): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 708
+Warning (10492): VHDL Process Statement warning at mivga.vhd(709): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 709
+Warning (10492): VHDL Process Statement warning at mivga.vhd(710): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 710
+Warning (10492): VHDL Process Statement warning at mivga.vhd(711): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 711
+Warning (10492): VHDL Process Statement warning at mivga.vhd(712): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 712
+Warning (10492): VHDL Process Statement warning at mivga.vhd(713): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 713
+Warning (10492): VHDL Process Statement warning at mivga.vhd(714): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 714
+Warning (10492): VHDL Process Statement warning at mivga.vhd(715): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 715
+Warning (10492): VHDL Process Statement warning at mivga.vhd(716): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 716
+Warning (10492): VHDL Process Statement warning at mivga.vhd(717): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 717
+Warning (10492): VHDL Process Statement warning at mivga.vhd(718): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 718
+Warning (10492): VHDL Process Statement warning at mivga.vhd(720): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 720
+Warning (10492): VHDL Process Statement warning at mivga.vhd(721): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 721
+Warning (10492): VHDL Process Statement warning at mivga.vhd(722): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 722
+Warning (10492): VHDL Process Statement warning at mivga.vhd(723): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 723
+Warning (10492): VHDL Process Statement warning at mivga.vhd(724): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 724
+Warning (10492): VHDL Process Statement warning at mivga.vhd(725): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 725
+Warning (10492): VHDL Process Statement warning at mivga.vhd(726): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 726
+Warning (10492): VHDL Process Statement warning at mivga.vhd(727): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 727
+Warning (10492): VHDL Process Statement warning at mivga.vhd(728): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 728
+Warning (10492): VHDL Process Statement warning at mivga.vhd(729): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 729
+Warning (10492): VHDL Process Statement warning at mivga.vhd(730): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 730
+Warning (10492): VHDL Process Statement warning at mivga.vhd(731): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 731
+Warning (10492): VHDL Process Statement warning at mivga.vhd(739): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 739
+Warning (10492): VHDL Process Statement warning at mivga.vhd(740): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 740
+Warning (10492): VHDL Process Statement warning at mivga.vhd(741): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 741
+Warning (10492): VHDL Process Statement warning at mivga.vhd(742): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 742
+Warning (10492): VHDL Process Statement warning at mivga.vhd(743): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 743
+Warning (10492): VHDL Process Statement warning at mivga.vhd(744): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 744
+Warning (10492): VHDL Process Statement warning at mivga.vhd(745): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 745
+Warning (10492): VHDL Process Statement warning at mivga.vhd(746): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 746
+Warning (10492): VHDL Process Statement warning at mivga.vhd(747): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 747
+Warning (10492): VHDL Process Statement warning at mivga.vhd(748): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 748
+Warning (10492): VHDL Process Statement warning at mivga.vhd(749): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 749
+Warning (10492): VHDL Process Statement warning at mivga.vhd(750): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 750
+Warning (10492): VHDL Process Statement warning at mivga.vhd(752): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 752
+Warning (10492): VHDL Process Statement warning at mivga.vhd(753): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 753
+Warning (10492): VHDL Process Statement warning at mivga.vhd(754): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 754
+Warning (10492): VHDL Process Statement warning at mivga.vhd(755): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 755
+Warning (10492): VHDL Process Statement warning at mivga.vhd(756): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 756
+Warning (10492): VHDL Process Statement warning at mivga.vhd(757): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 757
+Warning (10492): VHDL Process Statement warning at mivga.vhd(758): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 758
+Warning (10492): VHDL Process Statement warning at mivga.vhd(759): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 759
+Warning (10492): VHDL Process Statement warning at mivga.vhd(760): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 760
+Warning (10492): VHDL Process Statement warning at mivga.vhd(761): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 761
+Warning (10492): VHDL Process Statement warning at mivga.vhd(762): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 762
+Warning (10492): VHDL Process Statement warning at mivga.vhd(763): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 763
+Warning (10492): VHDL Process Statement warning at mivga.vhd(765): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 765
+Warning (10492): VHDL Process Statement warning at mivga.vhd(766): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 766
+Warning (10492): VHDL Process Statement warning at mivga.vhd(767): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 767
+Warning (10492): VHDL Process Statement warning at mivga.vhd(768): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 768
+Warning (10492): VHDL Process Statement warning at mivga.vhd(769): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 769
+Warning (10492): VHDL Process Statement warning at mivga.vhd(770): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 770
+Warning (10492): VHDL Process Statement warning at mivga.vhd(771): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 771
+Warning (10492): VHDL Process Statement warning at mivga.vhd(772): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 772
+Warning (10492): VHDL Process Statement warning at mivga.vhd(773): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 773
+Warning (10492): VHDL Process Statement warning at mivga.vhd(774): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 774
+Warning (10492): VHDL Process Statement warning at mivga.vhd(775): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 775
+Warning (10492): VHDL Process Statement warning at mivga.vhd(776): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 776
+Warning (10492): VHDL Process Statement warning at mivga.vhd(784): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 784
+Warning (10492): VHDL Process Statement warning at mivga.vhd(785): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 785
+Warning (10492): VHDL Process Statement warning at mivga.vhd(786): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 786
+Warning (10492): VHDL Process Statement warning at mivga.vhd(787): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 787
+Warning (10492): VHDL Process Statement warning at mivga.vhd(788): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 788
+Warning (10492): VHDL Process Statement warning at mivga.vhd(789): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 789
+Warning (10492): VHDL Process Statement warning at mivga.vhd(790): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 790
+Warning (10492): VHDL Process Statement warning at mivga.vhd(791): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 791
+Warning (10492): VHDL Process Statement warning at mivga.vhd(792): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 792
+Warning (10492): VHDL Process Statement warning at mivga.vhd(793): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 793
+Warning (10492): VHDL Process Statement warning at mivga.vhd(794): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 794
+Warning (10492): VHDL Process Statement warning at mivga.vhd(795): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 795
+Warning (10492): VHDL Process Statement warning at mivga.vhd(797): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 797
+Warning (10492): VHDL Process Statement warning at mivga.vhd(798): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 798
+Warning (10492): VHDL Process Statement warning at mivga.vhd(799): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 799
+Warning (10492): VHDL Process Statement warning at mivga.vhd(800): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 800
+Warning (10492): VHDL Process Statement warning at mivga.vhd(801): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 801
+Warning (10492): VHDL Process Statement warning at mivga.vhd(802): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 802
+Warning (10492): VHDL Process Statement warning at mivga.vhd(803): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 803
+Warning (10492): VHDL Process Statement warning at mivga.vhd(804): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 804
+Warning (10492): VHDL Process Statement warning at mivga.vhd(805): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 805
+Warning (10492): VHDL Process Statement warning at mivga.vhd(806): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 806
+Warning (10492): VHDL Process Statement warning at mivga.vhd(807): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 807
+Warning (10492): VHDL Process Statement warning at mivga.vhd(808): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 808
+Warning (10492): VHDL Process Statement warning at mivga.vhd(810): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 810
+Warning (10492): VHDL Process Statement warning at mivga.vhd(811): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 811
+Warning (10492): VHDL Process Statement warning at mivga.vhd(812): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 812
+Warning (10492): VHDL Process Statement warning at mivga.vhd(813): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 813
+Warning (10492): VHDL Process Statement warning at mivga.vhd(814): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 814
+Warning (10492): VHDL Process Statement warning at mivga.vhd(815): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 815
+Warning (10492): VHDL Process Statement warning at mivga.vhd(816): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 816
+Warning (10492): VHDL Process Statement warning at mivga.vhd(817): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 817
+Warning (10492): VHDL Process Statement warning at mivga.vhd(818): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 818
+Warning (10492): VHDL Process Statement warning at mivga.vhd(819): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 819
+Warning (10492): VHDL Process Statement warning at mivga.vhd(820): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 820
+Warning (10492): VHDL Process Statement warning at mivga.vhd(821): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 821
+Warning (10492): VHDL Process Statement warning at mivga.vhd(823): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 823
+Warning (10492): VHDL Process Statement warning at mivga.vhd(824): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 824
+Warning (10492): VHDL Process Statement warning at mivga.vhd(825): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 825
+Warning (10492): VHDL Process Statement warning at mivga.vhd(826): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 826
+Warning (10492): VHDL Process Statement warning at mivga.vhd(827): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 827
+Warning (10492): VHDL Process Statement warning at mivga.vhd(828): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 828
+Warning (10492): VHDL Process Statement warning at mivga.vhd(829): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 829
+Warning (10492): VHDL Process Statement warning at mivga.vhd(830): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 830
+Warning (10492): VHDL Process Statement warning at mivga.vhd(831): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 831
+Warning (10492): VHDL Process Statement warning at mivga.vhd(832): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 832
+Warning (10492): VHDL Process Statement warning at mivga.vhd(833): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 833
+Warning (10492): VHDL Process Statement warning at mivga.vhd(834): signal "ColorD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 834
+Warning (10492): VHDL Process Statement warning at mivga.vhd(836): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 836
+Warning (10492): VHDL Process Statement warning at mivga.vhd(837): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 837
+Warning (10492): VHDL Process Statement warning at mivga.vhd(838): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 838
+Warning (10492): VHDL Process Statement warning at mivga.vhd(839): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 839
+Warning (10492): VHDL Process Statement warning at mivga.vhd(840): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 840
+Warning (10492): VHDL Process Statement warning at mivga.vhd(841): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 841
+Warning (10492): VHDL Process Statement warning at mivga.vhd(842): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 842
+Warning (10492): VHDL Process Statement warning at mivga.vhd(843): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 843
+Warning (10492): VHDL Process Statement warning at mivga.vhd(844): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 844
+Warning (10492): VHDL Process Statement warning at mivga.vhd(845): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 845
+Warning (10492): VHDL Process Statement warning at mivga.vhd(846): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 846
+Warning (10492): VHDL Process Statement warning at mivga.vhd(847): signal "ColorE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 847
+Warning (10492): VHDL Process Statement warning at mivga.vhd(849): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 849
+Warning (10492): VHDL Process Statement warning at mivga.vhd(850): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 850
+Warning (10492): VHDL Process Statement warning at mivga.vhd(851): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 851
+Warning (10492): VHDL Process Statement warning at mivga.vhd(852): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 852
+Warning (10492): VHDL Process Statement warning at mivga.vhd(853): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 853
+Warning (10492): VHDL Process Statement warning at mivga.vhd(854): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 854
+Warning (10492): VHDL Process Statement warning at mivga.vhd(855): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 855
+Warning (10492): VHDL Process Statement warning at mivga.vhd(856): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 856
+Warning (10492): VHDL Process Statement warning at mivga.vhd(857): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 857
+Warning (10492): VHDL Process Statement warning at mivga.vhd(858): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 858
+Warning (10492): VHDL Process Statement warning at mivga.vhd(859): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 859
+Warning (10492): VHDL Process Statement warning at mivga.vhd(860): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 860
+Warning (10492): VHDL Process Statement warning at mivga.vhd(862): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 862
+Warning (10492): VHDL Process Statement warning at mivga.vhd(863): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 863
+Warning (10492): VHDL Process Statement warning at mivga.vhd(864): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 864
+Warning (10492): VHDL Process Statement warning at mivga.vhd(865): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 865
+Warning (10492): VHDL Process Statement warning at mivga.vhd(866): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 866
+Warning (10492): VHDL Process Statement warning at mivga.vhd(867): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 867
+Warning (10492): VHDL Process Statement warning at mivga.vhd(868): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 868
+Warning (10492): VHDL Process Statement warning at mivga.vhd(869): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 869
+Warning (10492): VHDL Process Statement warning at mivga.vhd(870): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 870
+Warning (10492): VHDL Process Statement warning at mivga.vhd(871): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 871
+Warning (10492): VHDL Process Statement warning at mivga.vhd(872): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 872
+Warning (10492): VHDL Process Statement warning at mivga.vhd(873): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 873
+Warning (10492): VHDL Process Statement warning at mivga.vhd(881): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 881
+Warning (10492): VHDL Process Statement warning at mivga.vhd(882): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 882
+Warning (10492): VHDL Process Statement warning at mivga.vhd(883): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 883
+Warning (10492): VHDL Process Statement warning at mivga.vhd(884): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 884
+Warning (10492): VHDL Process Statement warning at mivga.vhd(885): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 885
+Warning (10492): VHDL Process Statement warning at mivga.vhd(886): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 886
+Warning (10492): VHDL Process Statement warning at mivga.vhd(887): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 887
+Warning (10492): VHDL Process Statement warning at mivga.vhd(888): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 888
+Warning (10492): VHDL Process Statement warning at mivga.vhd(889): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 889
+Warning (10492): VHDL Process Statement warning at mivga.vhd(890): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 890
+Warning (10492): VHDL Process Statement warning at mivga.vhd(891): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 891
+Warning (10492): VHDL Process Statement warning at mivga.vhd(892): signal "colorA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 892
+Warning (10492): VHDL Process Statement warning at mivga.vhd(894): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 894
+Warning (10492): VHDL Process Statement warning at mivga.vhd(895): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 895
+Warning (10492): VHDL Process Statement warning at mivga.vhd(896): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 896
+Warning (10492): VHDL Process Statement warning at mivga.vhd(897): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 897
+Warning (10492): VHDL Process Statement warning at mivga.vhd(898): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 898
+Warning (10492): VHDL Process Statement warning at mivga.vhd(899): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 899
+Warning (10492): VHDL Process Statement warning at mivga.vhd(900): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 900
+Warning (10492): VHDL Process Statement warning at mivga.vhd(901): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 901
+Warning (10492): VHDL Process Statement warning at mivga.vhd(902): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 902
+Warning (10492): VHDL Process Statement warning at mivga.vhd(903): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 903
+Warning (10492): VHDL Process Statement warning at mivga.vhd(904): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 904
+Warning (10492): VHDL Process Statement warning at mivga.vhd(905): signal "colorB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 905
+Warning (10492): VHDL Process Statement warning at mivga.vhd(907): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 907
+Warning (10492): VHDL Process Statement warning at mivga.vhd(908): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 908
+Warning (10492): VHDL Process Statement warning at mivga.vhd(909): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 909
+Warning (10492): VHDL Process Statement warning at mivga.vhd(910): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 910
+Warning (10492): VHDL Process Statement warning at mivga.vhd(911): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 911
+Warning (10492): VHDL Process Statement warning at mivga.vhd(912): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 912
+Warning (10492): VHDL Process Statement warning at mivga.vhd(913): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 913
+Warning (10492): VHDL Process Statement warning at mivga.vhd(914): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 914
+Warning (10492): VHDL Process Statement warning at mivga.vhd(915): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 915
+Warning (10492): VHDL Process Statement warning at mivga.vhd(916): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 916
+Warning (10492): VHDL Process Statement warning at mivga.vhd(917): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 917
+Warning (10492): VHDL Process Statement warning at mivga.vhd(918): signal "colorC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 918
+Warning (10492): VHDL Process Statement warning at mivga.vhd(920): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 920
+Warning (10492): VHDL Process Statement warning at mivga.vhd(921): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 921
+Warning (10492): VHDL Process Statement warning at mivga.vhd(922): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 922
+Warning (10492): VHDL Process Statement warning at mivga.vhd(923): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 923
+Warning (10492): VHDL Process Statement warning at mivga.vhd(924): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 924
+Warning (10492): VHDL Process Statement warning at mivga.vhd(925): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 925
+Warning (10492): VHDL Process Statement warning at mivga.vhd(926): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 926
+Warning (10492): VHDL Process Statement warning at mivga.vhd(927): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 927
+Warning (10492): VHDL Process Statement warning at mivga.vhd(928): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 928
+Warning (10492): VHDL Process Statement warning at mivga.vhd(929): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 929
+Warning (10492): VHDL Process Statement warning at mivga.vhd(930): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 930
+Warning (10492): VHDL Process Statement warning at mivga.vhd(931): signal "colorF" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 931
+Warning (10492): VHDL Process Statement warning at mivga.vhd(933): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 933
+Warning (10492): VHDL Process Statement warning at mivga.vhd(934): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 934
+Warning (10492): VHDL Process Statement warning at mivga.vhd(935): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 935
+Warning (10492): VHDL Process Statement warning at mivga.vhd(936): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 936
+Warning (10492): VHDL Process Statement warning at mivga.vhd(937): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 937
+Warning (10492): VHDL Process Statement warning at mivga.vhd(938): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 938
+Warning (10492): VHDL Process Statement warning at mivga.vhd(939): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 939
+Warning (10492): VHDL Process Statement warning at mivga.vhd(940): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 940
+Warning (10492): VHDL Process Statement warning at mivga.vhd(941): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 941
+Warning (10492): VHDL Process Statement warning at mivga.vhd(942): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 942
+Warning (10492): VHDL Process Statement warning at mivga.vhd(943): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 943
+Warning (10492): VHDL Process Statement warning at mivga.vhd(944): signal "colorG" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 944
+Warning (10631): VHDL Process Statement warning at mivga.vhd(262): inferring latch(es) for signal or variable "red", which holds its previous value in one or more paths through the process File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Warning (10631): VHDL Process Statement warning at mivga.vhd(262): inferring latch(es) for signal or variable "green", which holds its previous value in one or more paths through the process File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Warning (10631): VHDL Process Statement warning at mivga.vhd(262): inferring latch(es) for signal or variable "blue", which holds its previous value in one or more paths through the process File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "blue[0]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "blue[1]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "blue[2]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "blue[3]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "green[0]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "green[1]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "green[2]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "green[3]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "red[0]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "red[1]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "red[2]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (10041): Inferred latch for "red[3]" at mivga.vhd(262) File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "red[1]$latch" merged with LATCH primitive "red[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "red[2]$latch" merged with LATCH primitive "red[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "red[3]$latch" merged with LATCH primitive "red[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "green[1]$latch" merged with LATCH primitive "green[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "green[2]$latch" merged with LATCH primitive "green[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "green[3]$latch" merged with LATCH primitive "green[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "blue[1]$latch" merged with LATCH primitive "blue[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "blue[2]$latch" merged with LATCH primitive "blue[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+    Info (13026): Duplicate LATCH primitive "blue[3]$latch" merged with LATCH primitive "blue[0]$latch" File: C:/Users/ramse/Downloads/Prac11 - complementaria/mivga.vhd Line: 262
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 299 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 21 output pins
+    Info (21061): Implemented 277 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 582 warnings
+    Info: Peak virtual memory: 4814 megabytes
+    Info: Processing ended: Wed Nov 07 17:12:41 2018
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:42
+
+

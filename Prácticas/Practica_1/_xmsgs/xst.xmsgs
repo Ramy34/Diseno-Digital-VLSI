@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLParsers" num="1401" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/P1.vhd</arg>&quot; Line <arg fmt="%d" index="2">181</arg>. Object <arg fmt="%s" index="3">AP</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
+</msg>
+
+<msg type="error" file="HDLParsers" num="1401" delta="old" >&quot;<arg fmt="%s" index="1">C:/Users/alumno/Documents/VLSI GRUPO 4/Practica_1/P1.vhd</arg>&quot; Line <arg fmt="%d" index="2">183</arg>. Object <arg fmt="%s" index="3">AP</arg> of mode <arg fmt="%s" index="4">OUT</arg> can not be read.
+</msg>
+
+</messages>

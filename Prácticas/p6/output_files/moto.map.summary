@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Wed Sep 26 18:43:24 2018
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : moto
+Top-level Entity Name : MotPasos
+Family : MAX 10
+Total logic elements : 69
+    Total combinational functions : 68
+    Dedicated logic registers : 29
+Total registers : 29
+Total pins : 13
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

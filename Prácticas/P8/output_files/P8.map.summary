@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Tue Oct 16 18:01:40 2018
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : P8
+Top-level Entity Name : TX
+Family : MAX 10
+Total logic elements : 126
+    Total combinational functions : 124
+    Dedicated logic registers : 86
+Total registers : 86
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

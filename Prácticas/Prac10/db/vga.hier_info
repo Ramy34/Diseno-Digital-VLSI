@@ -1,0 +1,39 @@
+|vga
+clk50MHz => contador[0].CLK
+clk50MHz => contador[1].CLK
+clk50MHz => contador[2].CLK
+clk50MHz => contador[3].CLK
+clk50MHz => contador[4].CLK
+clk50MHz => contador[5].CLK
+clk50MHz => contador[6].CLK
+clk50MHz => contador[7].CLK
+clk50MHz => contador[8].CLK
+clk50MHz => contador[9].CLK
+clk50MHz => contador[10].CLK
+clk50MHz => contador[11].CLK
+clk50MHz => contador[12].CLK
+clk50MHz => contador[13].CLK
+clk50MHz => contador[14].CLK
+clk50MHz => contador[15].CLK
+clk50MHz => contador[16].CLK
+clk50MHz => contador[17].CLK
+clk50MHz => contador[18].CLK
+clk50MHz => contador[19].CLK
+clk50MHz => temporal.CLK
+clk50MHz => reloj_pixel.CLK
+red[0] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[1] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[2] <= red.DB_MAX_OUTPUT_PORT_TYPE
+red[3] <= red.DB_MAX_OUTPUT_PORT_TYPE
+green[0] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[1] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[2] <= green.DB_MAX_OUTPUT_PORT_TYPE
+green[3] <= green.DB_MAX_OUTPUT_PORT_TYPE
+blue[0] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[1] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[2] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+blue[3] <= blue.DB_MAX_OUTPUT_PORT_TYPE
+h_sync <= h_sync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+v_sync <= v_sync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

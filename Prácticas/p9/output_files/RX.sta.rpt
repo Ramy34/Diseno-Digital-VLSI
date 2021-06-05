@@ -1,0 +1,755 @@
+Timing Analyzer report for RX
+Tue Oct 23 15:52:46 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Slow 1200mV 85C Model Setup Summary
+  7. Slow 1200mV 85C Model Hold Summary
+  8. Slow 1200mV 85C Model Recovery Summary
+  9. Slow 1200mV 85C Model Removal Summary
+ 10. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 11. Slow 1200mV 85C Model Metastability Summary
+ 12. Slow 1200mV 0C Model Fmax Summary
+ 13. Slow 1200mV 0C Model Setup Summary
+ 14. Slow 1200mV 0C Model Hold Summary
+ 15. Slow 1200mV 0C Model Recovery Summary
+ 16. Slow 1200mV 0C Model Removal Summary
+ 17. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 18. Slow 1200mV 0C Model Metastability Summary
+ 19. Fast 1200mV 0C Model Setup Summary
+ 20. Fast 1200mV 0C Model Hold Summary
+ 21. Fast 1200mV 0C Model Recovery Summary
+ 22. Fast 1200mV 0C Model Removal Summary
+ 23. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Fast 1200mV 0C Model Metastability Summary
+ 25. Multicorner Timing Analysis Summary
+ 26. Board Trace Model Assignments
+ 27. Input Transition Times
+ 28. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 29. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 30. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 31. Setup Transfers
+ 32. Hold Transfers
+ 33. Report TCCS
+ 34. Report RSKM
+ 35. Unconstrained Paths Summary
+ 36. Clock Status Summary
+ 37. Unconstrained Input Ports
+ 38. Unconstrained Output Ports
+ 39. Unconstrained Input Ports
+ 40. Unconstrained Output Ports
+ 41. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; RX                                                  ;
+; Device Family         ; MAX 10                                              ;
+; Device Name           ; 10M50DAF484C7G                                      ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.12        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   3.9%      ;
+;     Processor 3            ;   3.8%      ;
+;     Processor 4            ;   3.8%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                       ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; Clock Name                    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                           ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+; clk                           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                           ;
+; clk2Hz:clk2Hz_i|temporal      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk2Hz:clk2Hz_i|temporal }      ;
+; Leds:L1|Divisor:R1|cuenta[10] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Leds:L1|Divisor:R1|cuenta[10] } ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Leds:L1|Divisor:R2|cuenta[23] } ;
+; Leds:L2|Divisor:R1|cuenta[10] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Leds:L2|Divisor:R1|cuenta[10] } ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Leds:L2|Divisor:R2|cuenta[23] } ;
+; RX:R1|LEDS[0]                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { RX:R1|LEDS[0] }                 ;
++-------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                            ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note                                           ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+; 141.32 MHz ; 141.32 MHz      ; RX:R1|LEDS[0]                 ;                                                ;
+; 196.73 MHz ; 196.73 MHz      ; clk                           ;                                                ;
+; 201.45 MHz ; 201.45 MHz      ; Leds:L1|Divisor:R1|cuenta[10] ;                                                ;
+; 215.15 MHz ; 215.15 MHz      ; Leds:L2|Divisor:R1|cuenta[10] ;                                                ;
+; 350.02 MHz ; 350.02 MHz      ; Leds:L1|Divisor:R2|cuenta[23] ;                                                ;
+; 374.25 MHz ; 374.25 MHz      ; Leds:L2|Divisor:R2|cuenta[23] ;                                                ;
+; 816.99 MHz ; 416.15 MHz      ; clk2Hz:clk2Hz_i|temporal      ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                    ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; RX:R1|LEDS[0]                 ; -5.258 ; -37.212       ;
+; clk                           ; -4.083 ; -168.337      ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -3.964 ; -37.823       ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -3.648 ; -21.601       ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -1.857 ; -63.401       ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -1.672 ; -60.342       ;
+; clk2Hz:clk2Hz_i|temporal      ; -0.224 ; -0.836        ;
++-------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                    ;
++-------------------------------+-------+---------------+
+; Clock                         ; Slack ; End Point TNS ;
++-------------------------------+-------+---------------+
+; clk                           ; 0.323 ; 0.000         ;
+; clk2Hz:clk2Hz_i|temporal      ; 0.340 ; 0.000         ;
+; Leds:L1|Divisor:R1|cuenta[10] ; 0.410 ; 0.000         ;
+; Leds:L2|Divisor:R1|cuenta[10] ; 0.417 ; 0.000         ;
+; Leds:L1|Divisor:R2|cuenta[23] ; 0.420 ; 0.000         ;
+; Leds:L2|Divisor:R2|cuenta[23] ; 0.552 ; 0.000         ;
+; RX:R1|LEDS[0]                 ; 1.244 ; 0.000         ;
++-------------------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary      ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clk                           ; -3.000 ; -125.061      ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -1.403 ; -56.120       ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -1.403 ; -56.120       ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -1.403 ; -22.448       ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -1.403 ; -16.836       ;
+; clk2Hz:clk2Hz_i|temporal      ; -1.403 ; -5.612        ;
+; RX:R1|LEDS[0]                 ; 0.370  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                             ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                    ; Note                                           ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+; 147.93 MHz ; 147.93 MHz      ; RX:R1|LEDS[0]                 ;                                                ;
+; 213.27 MHz ; 213.27 MHz      ; clk                           ;                                                ;
+; 219.15 MHz ; 219.15 MHz      ; Leds:L1|Divisor:R1|cuenta[10] ;                                                ;
+; 234.74 MHz ; 234.74 MHz      ; Leds:L2|Divisor:R1|cuenta[10] ;                                                ;
+; 374.39 MHz ; 374.39 MHz      ; Leds:L1|Divisor:R2|cuenta[23] ;                                                ;
+; 403.23 MHz ; 403.23 MHz      ; Leds:L2|Divisor:R2|cuenta[23] ;                                                ;
+; 894.45 MHz ; 416.15 MHz      ; clk2Hz:clk2Hz_i|temporal      ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+-------------------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                     ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; RX:R1|LEDS[0]                 ; -4.881 ; -34.922       ;
+; clk                           ; -3.689 ; -146.025      ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -3.563 ; -33.140       ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -3.260 ; -18.632       ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -1.671 ; -56.046       ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -1.480 ; -52.970       ;
+; clk2Hz:clk2Hz_i|temporal      ; -0.118 ; -0.421        ;
++-------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                     ;
++-------------------------------+-------+---------------+
+; Clock                         ; Slack ; End Point TNS ;
++-------------------------------+-------+---------------+
+; clk                           ; 0.290 ; 0.000         ;
+; clk2Hz:clk2Hz_i|temporal      ; 0.306 ; 0.000         ;
+; Leds:L1|Divisor:R1|cuenta[10] ; 0.376 ; 0.000         ;
+; Leds:L2|Divisor:R1|cuenta[10] ; 0.381 ; 0.000         ;
+; Leds:L1|Divisor:R2|cuenta[23] ; 0.384 ; 0.000         ;
+; Leds:L2|Divisor:R2|cuenta[23] ; 0.503 ; 0.000         ;
+; RX:R1|LEDS[0]                 ; 1.120 ; 0.000         ;
++-------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary       ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clk                           ; -3.000 ; -125.061      ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -1.403 ; -56.120       ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -1.403 ; -56.120       ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -1.403 ; -22.448       ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -1.403 ; -16.836       ;
+; clk2Hz:clk2Hz_i|temporal      ; -1.403 ; -5.612        ;
+; RX:R1|LEDS[0]                 ; 0.425  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                     ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; RX:R1|LEDS[0]                 ; -1.822 ; -12.781       ;
+; clk                           ; -1.311 ; -25.035       ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -1.015 ; -7.489        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -0.874 ; -3.317        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -0.233 ; -4.443        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -0.180 ; -3.631        ;
+; clk2Hz:clk2Hz_i|temporal      ; 0.476  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
++-------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                     ;
++-------------------------------+-------+---------------+
+; Clock                         ; Slack ; End Point TNS ;
++-------------------------------+-------+---------------+
+; clk                           ; 0.141 ; 0.000         ;
+; clk2Hz:clk2Hz_i|temporal      ; 0.149 ; 0.000         ;
+; Leds:L1|Divisor:R1|cuenta[10] ; 0.162 ; 0.000         ;
+; Leds:L2|Divisor:R1|cuenta[10] ; 0.165 ; 0.000         ;
+; Leds:L1|Divisor:R2|cuenta[23] ; 0.166 ; 0.000         ;
+; Leds:L2|Divisor:R2|cuenta[23] ; 0.211 ; 0.000         ;
+; RX:R1|LEDS[0]                 ; 0.570 ; 0.000         ;
++-------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary       ;
++-------------------------------+--------+---------------+
+; Clock                         ; Slack  ; End Point TNS ;
++-------------------------------+--------+---------------+
+; clk                           ; -3.000 ; -104.194      ;
+; Leds:L1|Divisor:R2|cuenta[23] ; -1.000 ; -40.000       ;
+; Leds:L2|Divisor:R2|cuenta[23] ; -1.000 ; -40.000       ;
+; Leds:L1|Divisor:R1|cuenta[10] ; -1.000 ; -16.000       ;
+; Leds:L2|Divisor:R1|cuenta[10] ; -1.000 ; -12.000       ;
+; clk2Hz:clk2Hz_i|temporal      ; -1.000 ; -4.000        ;
+; RX:R1|LEDS[0]                 ; 0.339  ; 0.000         ;
++-------------------------------+--------+---------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                          ;
++--------------------------------+----------+-------+----------+---------+---------------------+
+; Clock                          ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack               ; -5.258   ; 0.141 ; N/A      ; N/A     ; -3.000              ;
+;  Leds:L1|Divisor:R1|cuenta[10] ; -3.964   ; 0.162 ; N/A      ; N/A     ; -1.403              ;
+;  Leds:L1|Divisor:R2|cuenta[23] ; -1.857   ; 0.166 ; N/A      ; N/A     ; -1.403              ;
+;  Leds:L2|Divisor:R1|cuenta[10] ; -3.648   ; 0.165 ; N/A      ; N/A     ; -1.403              ;
+;  Leds:L2|Divisor:R2|cuenta[23] ; -1.672   ; 0.211 ; N/A      ; N/A     ; -1.403              ;
+;  RX:R1|LEDS[0]                 ; -5.258   ; 0.570 ; N/A      ; N/A     ; 0.339               ;
+;  clk                           ; -4.083   ; 0.141 ; N/A      ; N/A     ; -3.000              ;
+;  clk2Hz:clk2Hz_i|temporal      ; -0.224   ; 0.149 ; N/A      ; N/A     ; -1.403              ;
+; Design-wide TNS                ; -389.552 ; 0.0   ; 0.0      ; 0.0     ; -282.197            ;
+;  Leds:L1|Divisor:R1|cuenta[10] ; -37.823  ; 0.000 ; N/A      ; N/A     ; -22.448             ;
+;  Leds:L1|Divisor:R2|cuenta[23] ; -63.401  ; 0.000 ; N/A      ; N/A     ; -56.120             ;
+;  Leds:L2|Divisor:R1|cuenta[10] ; -21.601  ; 0.000 ; N/A      ; N/A     ; -16.836             ;
+;  Leds:L2|Divisor:R2|cuenta[23] ; -60.342  ; 0.000 ; N/A      ; N/A     ; -56.120             ;
+;  RX:R1|LEDS[0]                 ; -37.212  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  clk                           ; -168.337 ; 0.000 ; N/A      ; N/A     ; -125.061            ;
+;  clk2Hz:clk2Hz_i|temporal      ; -0.836   ; 0.000 ; N/A      ; N/A     ; -5.612              ;
++--------------------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin          ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; foquitos[0]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[1]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[2]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[3]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[4]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[5]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[6]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; foquitos[7]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++--------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++---------------------------------------------------------------------------------+
+; Input Transition Times                                                          ;
++---------------------+-----------------------+-----------------+-----------------+
+; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
++---------------------+-----------------------+-----------------+-----------------+
+; estadoDS[0]         ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; estadoDS[1]         ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; estadoDS[2]         ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; estadoDS[3]         ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; clk                 ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; wire_rx             ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TMS~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TCK~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_TDI~        ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_CONFIG_SEL~ ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nCONFIG~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_nSTATUS~    ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_CONF_DONE~  ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
++---------------------+-----------------------+-----------------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; foquitos[0]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[1]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[2]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[3]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[4]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[5]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[6]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.128 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.128 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; foquitos[7]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-08 V                   ; 3.2 V               ; -0.127 V            ; 0.219 V                              ; 0.346 V                              ; 4.45e-10 s                  ; 4.51e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.73e-08 V                  ; 3.2 V              ; -0.127 V           ; 0.219 V                             ; 0.346 V                             ; 4.45e-10 s                 ; 4.51e-10 s                 ; No                        ; No                        ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; foquitos[0]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[1]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[2]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[3]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[4]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[5]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[6]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0694 V           ; 0.259 V                              ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0694 V          ; 0.259 V                             ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; foquitos[7]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.41e-06 V                   ; 3.16 V              ; -0.0688 V           ; 0.26 V                               ; 0.209 V                              ; 4.69e-10 s                  ; 6.21e-10 s                  ; No                         ; No                         ; 3.08 V                      ; 3.41e-06 V                  ; 3.16 V             ; -0.0688 V          ; 0.26 V                              ; 0.209 V                             ; 4.69e-10 s                 ; 6.21e-10 s                 ; No                        ; No                        ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin          ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; foquitos[0]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[1]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[2]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[3]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[4]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[5]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[6]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.65 V              ; -0.0209 V           ; 0.391 V                              ; 0.09 V                               ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.65 V             ; -0.0209 V          ; 0.391 V                             ; 0.09 V                              ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; foquitos[7]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_TDO~ ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.46 V                       ; 5.04e-07 V                   ; 3.64 V              ; -0.0201 V           ; 0.391 V                              ; 0.088 V                              ; 2.79e-10 s                  ; 3.95e-10 s                  ; No                         ; Yes                        ; 3.46 V                      ; 5.04e-07 V                  ; 3.64 V             ; -0.0201 V          ; 0.391 V                             ; 0.088 V                             ; 2.79e-10 s                 ; 3.95e-10 s                 ; No                        ; Yes                       ;
++--------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                           ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; clk                           ; clk                           ; 1572     ; 0        ; 0        ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; clk2Hz:clk2Hz_i|temporal      ; 15       ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; Leds:L1|Divisor:R1|cuenta[10] ; 471      ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Leds:L1|Divisor:R1|cuenta[10] ; 49       ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Leds:L1|Divisor:R2|cuenta[23] ; 356      ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; Leds:L2|Divisor:R1|cuenta[10] ; 253      ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Leds:L2|Divisor:R1|cuenta[10] ; 24       ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Leds:L2|Divisor:R2|cuenta[23] ; 356      ; 0        ; 0        ; 0        ;
+; clk                           ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 106      ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 4        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 8        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 4        ; 0        ;
+; RX:R1|LEDS[0]                 ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 16       ; 16       ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                            ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; From Clock                    ; To Clock                      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+; clk                           ; clk                           ; 1572     ; 0        ; 0        ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; clk                           ; 1        ; 1        ; 0        ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; clk2Hz:clk2Hz_i|temporal      ; 15       ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; Leds:L1|Divisor:R1|cuenta[10] ; 471      ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Leds:L1|Divisor:R1|cuenta[10] ; 49       ; 0        ; 0        ; 0        ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Leds:L1|Divisor:R2|cuenta[23] ; 356      ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; Leds:L2|Divisor:R1|cuenta[10] ; 253      ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Leds:L2|Divisor:R1|cuenta[10] ; 24       ; 0        ; 0        ; 0        ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Leds:L2|Divisor:R2|cuenta[23] ; 356      ; 0        ; 0        ; 0        ;
+; clk                           ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 106      ; 0        ;
+; clk2Hz:clk2Hz_i|temporal      ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 4        ; 0        ;
+; Leds:L1|Divisor:R1|cuenta[10] ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 8        ; 0        ;
+; Leds:L2|Divisor:R1|cuenta[10] ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 4        ; 0        ;
+; RX:R1|LEDS[0]                 ; RX:R1|LEDS[0]                 ; 0        ; 0        ; 16       ; 16       ;
++-------------------------------+-------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 32    ; 32   ;
+; Unconstrained Output Ports      ; 8     ; 8    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------+
+; Clock Status Summary                                                               ;
++-------------------------------+-------------------------------+------+-------------+
+; Target                        ; Clock                         ; Type ; Status      ;
++-------------------------------+-------------------------------+------+-------------+
+; Leds:L1|Divisor:R1|cuenta[10] ; Leds:L1|Divisor:R1|cuenta[10] ; Base ; Constrained ;
+; Leds:L1|Divisor:R2|cuenta[23] ; Leds:L1|Divisor:R2|cuenta[23] ; Base ; Constrained ;
+; Leds:L2|Divisor:R1|cuenta[10] ; Leds:L2|Divisor:R1|cuenta[10] ; Base ; Constrained ;
+; Leds:L2|Divisor:R2|cuenta[23] ; Leds:L2|Divisor:R2|cuenta[23] ; Base ; Constrained ;
+; RX:R1|LEDS[0]                 ; RX:R1|LEDS[0]                 ; Base ; Constrained ;
+; clk                           ; clk                           ; Base ; Constrained ;
+; clk2Hz:clk2Hz_i|temporal      ; clk2Hz:clk2Hz_i|temporal      ; Base ; Constrained ;
++-------------------------------+-------------------------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; estadoDS[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; wire_rx     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; foquitos[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; estadoDS[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; estadoDS[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; wire_rx     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; foquitos[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; foquitos[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Oct 23 15:52:38 2018
+Info: Command: quartus_sta RX -c RX
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 8 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'RX.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name Leds:L2|Divisor:R1|cuenta[10] Leds:L2|Divisor:R1|cuenta[10]
+    Info (332105): create_clock -period 1.000 -name Leds:L1|Divisor:R1|cuenta[10] Leds:L1|Divisor:R1|cuenta[10]
+    Info (332105): create_clock -period 1.000 -name Leds:L2|Divisor:R2|cuenta[23] Leds:L2|Divisor:R2|cuenta[23]
+    Info (332105): create_clock -period 1.000 -name Leds:L1|Divisor:R2|cuenta[23] Leds:L1|Divisor:R2|cuenta[23]
+    Info (332105): create_clock -period 1.000 -name clk2Hz:clk2Hz_i|temporal clk2Hz:clk2Hz_i|temporal
+    Info (332105): create_clock -period 1.000 -name RX:R1|LEDS[0] RX:R1|LEDS[0]
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: foquitos[7]~4  from: datac  to: combout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.258
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.258             -37.212 RX:R1|LEDS[0] 
+    Info (332119):    -4.083            -168.337 clk 
+    Info (332119):    -3.964             -37.823 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -3.648             -21.601 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.857             -63.401 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.672             -60.342 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):    -0.224              -0.836 clk2Hz:clk2Hz_i|temporal 
+Info (332146): Worst-case hold slack is 0.323
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.323               0.000 clk 
+    Info (332119):     0.340               0.000 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.410               0.000 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):     0.417               0.000 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):     0.420               0.000 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):     0.552               0.000 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):     1.244               0.000 RX:R1|LEDS[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -125.061 clk 
+    Info (332119):    -1.403             -56.120 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.403             -56.120 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.403             -22.448 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.403             -16.836 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.403              -5.612 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.370               0.000 RX:R1|LEDS[0] 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: foquitos[7]~4  from: datac  to: combout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.881
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.881             -34.922 RX:R1|LEDS[0] 
+    Info (332119):    -3.689            -146.025 clk 
+    Info (332119):    -3.563             -33.140 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -3.260             -18.632 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.671             -56.046 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.480             -52.970 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):    -0.118              -0.421 clk2Hz:clk2Hz_i|temporal 
+Info (332146): Worst-case hold slack is 0.290
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.290               0.000 clk 
+    Info (332119):     0.306               0.000 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.376               0.000 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):     0.381               0.000 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):     0.384               0.000 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):     0.503               0.000 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):     1.120               0.000 RX:R1|LEDS[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -125.061 clk 
+    Info (332119):    -1.403             -56.120 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.403             -56.120 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.403             -22.448 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.403             -16.836 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.403              -5.612 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.425               0.000 RX:R1|LEDS[0] 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: foquitos[7]~4  from: datac  to: combout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.822
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.822             -12.781 RX:R1|LEDS[0] 
+    Info (332119):    -1.311             -25.035 clk 
+    Info (332119):    -1.015              -7.489 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -0.874              -3.317 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -0.233              -4.443 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -0.180              -3.631 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):     0.476               0.000 clk2Hz:clk2Hz_i|temporal 
+Info (332146): Worst-case hold slack is 0.141
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.141               0.000 clk 
+    Info (332119):     0.149               0.000 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.162               0.000 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):     0.165               0.000 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):     0.166               0.000 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):     0.211               0.000 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):     0.570               0.000 RX:R1|LEDS[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -104.194 clk 
+    Info (332119):    -1.000             -40.000 Leds:L1|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.000             -40.000 Leds:L2|Divisor:R2|cuenta[23] 
+    Info (332119):    -1.000             -16.000 Leds:L1|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.000             -12.000 Leds:L2|Divisor:R1|cuenta[10] 
+    Info (332119):    -1.000              -4.000 clk2Hz:clk2Hz_i|temporal 
+    Info (332119):     0.339               0.000 RX:R1|LEDS[0] 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4845 megabytes
+    Info: Processing ended: Tue Oct 23 15:52:46 2018
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
+
+

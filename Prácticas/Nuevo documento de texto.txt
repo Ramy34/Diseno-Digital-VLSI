@@ -1,0 +1,110 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_arith.all;
+use IEEE.std_logic_unsigned.all;
+
+entity corri is
+	Port ( reloj : in std_logic;
+			 AN : out  STD_LOGIC_VECTOR (3 DOWNTO 0);
+			 L : out  STD_LOGIC_VECTOR (6 DOWNTO 0));
+end corri;
+
+architecture Behavioral of corri is
+	signal display1, display2, display3, display4 : std_logic_vector (6 downto 0);
+	signal segundo : std_logic;
+	signal Q : std_logic_vector(3 downto 0) := "0000";
+	SIGNAL rapido : STD_LOGIC;
+	SIGNAL Qr : STD_LOGIC_VECTOR(1 DOWNTO 0);
+begin
+
+	divisor : process (reloj)
+		variable CUENTA: std_logic_vector(27 downto 0) := X"0000000";
+	begin
+		if rising_edge (reloj) then
+			if CUENTA =X"48009E0" then
+				cuenta := X"0000000";
+			else
+				cuenta := cuenta+1;
+			end if;
+		end if;
+		segundo <= CUENTA(22);
+		rapido <= CUENTA(10);
+	end process;
+
+	contador : process (segundo)
+	begin
+		if rising_edge (segundo) then
+			Q <= Q +1;
+		end if;
+	end process;
+	
+	CONTRAPID: process(rapido)
+		variable CUENTA: STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
+	begin
+		if rising_edge (rapido) then
+			CUENTA := CUENTA +1;
+		end if;
+		Qr <= CUENTA;
+	end process;
+	
+	seledisplay: process(Qr)
+	begin
+		case Qr is
+			when "00" =>
+				AN <= "1110";
+			when "01" =>
+				AN <= "1101";
+			when "10" =>
+				AN <= "1011";
+			when others =>
+				AN <= "0111";
+		end case;
+	end process;
+	
+	MUXY: process (Qr)
+	begin 
+		if  Qr = "00" then
+			L <= display1;
+		elsif Qr = "01" then
+			L <= display2;
+		elsif Qr = "10" then
+			L <= display3;
+		elsif Qr = "11" then
+			L <= display4;
+		end if;
+	end process;
+
+	with Q select
+		display1 <= "0000110" when "0000", -- E
+			  "0101011" when "0001", -- n
+			  "1111111" when "0010", -- espacio
+			  "1000111" when "0011", -- L
+			  "0001000" when "0100", -- A
+		     "1111111" when "0101", -- espacio
+			  "1000000" when "0110", -- O
+			  "1000111" when "0111", -- L
+			  "0001000" when "1000", -- A
+			  "1111111" when others; -- espacios
+	
+	FF1 : process (segundo)
+	begin
+		if rising_edge (segundo) then
+			display2 <= display1;
+		end if;
+	end process;
+
+	FF2 : process (segundo)
+	begin
+		if rising_edge (segundo) then
+			display3 <= display2;
+		end if;
+	end process;
+
+	FF3 : process (segundo)
+	begin
+		if rising_edge (segundo) then
+			display4 <= display3;
+		end if;
+	end process;
+
+end Behavioral;

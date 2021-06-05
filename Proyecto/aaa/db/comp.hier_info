@@ -1,0 +1,567 @@
+|comp
+clk => RX:R1.CLK
+clk => leds:L1.CLK
+clk => leds:L2.CLK
+estadoDS[0] => foquitos[0].DATAB
+estadoDS[1] => foquitos[1].DATAB
+estadoDS[2] => foquitos[2].DATAB
+estadoDS[3] => foquitos[3].DATAB
+foquitos[0] <= foquitos[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[1] <= foquitos[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[2] <= foquitos[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[3] <= foquitos[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[4] <= foquitos[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[5] <= foquitos[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[6] <= foquitos[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+foquitos[7] <= foquitos[7]$latch.DB_MAX_OUTPUT_PORT_TYPE
+wire_rx => RX:R1.RX_WIRE
+
+
+|comp|RX:R1
+CLK => LEDS[0]~reg0.CLK
+CLK => LEDS[1]~reg0.CLK
+CLK => LEDS[2]~reg0.CLK
+CLK => LEDS[3]~reg0.CLK
+CLK => LEDS[4]~reg0.CLK
+CLK => LEDS[5]~reg0.CLK
+CLK => LEDS[6]~reg0.CLK
+CLK => LEDS[7]~reg0.CLK
+CLK => BUFF[0].CLK
+CLK => BUFF[1].CLK
+CLK => BUFF[2].CLK
+CLK => BUFF[3].CLK
+CLK => BUFF[4].CLK
+CLK => BUFF[5].CLK
+CLK => BUFF[6].CLK
+CLK => BUFF[7].CLK
+CLK => BUFF[8].CLK
+CLK => BUFF[9].CLK
+CLK => PRE[0].CLK
+CLK => PRE[1].CLK
+CLK => PRE[2].CLK
+CLK => PRE[3].CLK
+CLK => PRE[4].CLK
+CLK => PRE[5].CLK
+CLK => PRE[6].CLK
+CLK => PRE[7].CLK
+CLK => PRE[8].CLK
+CLK => PRE[9].CLK
+CLK => PRE[10].CLK
+CLK => PRE[11].CLK
+CLK => PRE[12].CLK
+CLK => INDICE[0].CLK
+CLK => INDICE[1].CLK
+CLK => INDICE[2].CLK
+CLK => INDICE[3].CLK
+CLK => FLAG.CLK
+LEDS[0] <= LEDS[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[1] <= LEDS[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[2] <= LEDS[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[3] <= LEDS[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[4] <= LEDS[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[5] <= LEDS[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[6] <= LEDS[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDS[7] <= LEDS[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => BUFF.DATAB
+RX_WIRE => RX_dato.IN1
+
+
+|comp|Leds:L1
+clk => divisor:R1.clk
+clk => divisor:R2.clk
+led1 <= PWM:P1.S
+led2 <= PWM:P2.S
+led3 <= PWM:P3.S
+led4 <= PWM:P4.S
+led5 <= PWM:P5.S
+led6 <= PWM:P6.S
+led7 <= PWM:P7.S
+led8 <= PWM:P8.S
+
+
+|comp|Leds:L1|Divisor:R1
+clk => cuenta[0].CLK
+clk => cuenta[1].CLK
+clk => cuenta[2].CLK
+clk => cuenta[3].CLK
+clk => cuenta[4].CLK
+clk => cuenta[5].CLK
+clk => cuenta[6].CLK
+clk => cuenta[7].CLK
+clk => cuenta[8].CLK
+clk => cuenta[9].CLK
+clk => cuenta[10].CLK
+clk => cuenta[11].CLK
+clk => cuenta[12].CLK
+clk => cuenta[13].CLK
+clk => cuenta[14].CLK
+clk => cuenta[15].CLK
+clk => cuenta[16].CLK
+clk => cuenta[17].CLK
+clk => cuenta[18].CLK
+clk => cuenta[19].CLK
+clk => cuenta[20].CLK
+clk => cuenta[21].CLK
+clk => cuenta[22].CLK
+clk => cuenta[23].CLK
+clk => cuenta[24].CLK
+clk => cuenta[25].CLK
+clk => cuenta[26].CLK
+clk => cuenta[27].CLK
+div_clk <= cuenta[10].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|Divisor:R2
+clk => cuenta[0].CLK
+clk => cuenta[1].CLK
+clk => cuenta[2].CLK
+clk => cuenta[3].CLK
+clk => cuenta[4].CLK
+clk => cuenta[5].CLK
+clk => cuenta[6].CLK
+clk => cuenta[7].CLK
+clk => cuenta[8].CLK
+clk => cuenta[9].CLK
+clk => cuenta[10].CLK
+clk => cuenta[11].CLK
+clk => cuenta[12].CLK
+clk => cuenta[13].CLK
+clk => cuenta[14].CLK
+clk => cuenta[15].CLK
+clk => cuenta[16].CLK
+clk => cuenta[17].CLK
+clk => cuenta[18].CLK
+clk => cuenta[19].CLK
+clk => cuenta[20].CLK
+clk => cuenta[21].CLK
+clk => cuenta[22].CLK
+clk => cuenta[23].CLK
+clk => cuenta[24].CLK
+clk => cuenta[25].CLK
+clk => cuenta[26].CLK
+clk => cuenta[27].CLK
+div_clk <= cuenta[23].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P1
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P2
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P3
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P4
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P5
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P6
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P7
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L1|PWM:P8
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2
+clk => divisor:R1.clk
+clk => divisor:R2.clk
+led1 <= PWM:P1.S
+led2 <= PWM:P2.S
+led3 <= PWM:P3.S
+led4 <= PWM:P4.S
+led5 <= PWM:P5.S
+led6 <= PWM:P6.S
+led7 <= PWM:P7.S
+led8 <= PWM:P8.S
+
+
+|comp|Leds:L2|Divisor:R1
+clk => cuenta[0].CLK
+clk => cuenta[1].CLK
+clk => cuenta[2].CLK
+clk => cuenta[3].CLK
+clk => cuenta[4].CLK
+clk => cuenta[5].CLK
+clk => cuenta[6].CLK
+clk => cuenta[7].CLK
+clk => cuenta[8].CLK
+clk => cuenta[9].CLK
+clk => cuenta[10].CLK
+clk => cuenta[11].CLK
+clk => cuenta[12].CLK
+clk => cuenta[13].CLK
+clk => cuenta[14].CLK
+clk => cuenta[15].CLK
+clk => cuenta[16].CLK
+clk => cuenta[17].CLK
+clk => cuenta[18].CLK
+clk => cuenta[19].CLK
+clk => cuenta[20].CLK
+clk => cuenta[21].CLK
+clk => cuenta[22].CLK
+clk => cuenta[23].CLK
+clk => cuenta[24].CLK
+clk => cuenta[25].CLK
+clk => cuenta[26].CLK
+clk => cuenta[27].CLK
+div_clk <= cuenta[10].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|Divisor:R2
+clk => cuenta[0].CLK
+clk => cuenta[1].CLK
+clk => cuenta[2].CLK
+clk => cuenta[3].CLK
+clk => cuenta[4].CLK
+clk => cuenta[5].CLK
+clk => cuenta[6].CLK
+clk => cuenta[7].CLK
+clk => cuenta[8].CLK
+clk => cuenta[9].CLK
+clk => cuenta[10].CLK
+clk => cuenta[11].CLK
+clk => cuenta[12].CLK
+clk => cuenta[13].CLK
+clk => cuenta[14].CLK
+clk => cuenta[15].CLK
+clk => cuenta[16].CLK
+clk => cuenta[17].CLK
+clk => cuenta[18].CLK
+clk => cuenta[19].CLK
+clk => cuenta[20].CLK
+clk => cuenta[21].CLK
+clk => cuenta[22].CLK
+clk => cuenta[23].CLK
+clk => cuenta[24].CLK
+clk => cuenta[25].CLK
+clk => cuenta[26].CLK
+clk => cuenta[27].CLK
+div_clk <= cuenta[23].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P1
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P2
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P3
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P4
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P5
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P6
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P7
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comp|Leds:L2|PWM:P8
+Reloj => S~reg0.CLK
+Reloj => Cuenta[0].CLK
+Reloj => Cuenta[1].CLK
+Reloj => Cuenta[2].CLK
+Reloj => Cuenta[3].CLK
+Reloj => Cuenta[4].CLK
+Reloj => Cuenta[5].CLK
+Reloj => Cuenta[6].CLK
+Reloj => Cuenta[7].CLK
+D[0] => LessThan0.IN16
+D[1] => LessThan0.IN15
+D[2] => LessThan0.IN14
+D[3] => LessThan0.IN13
+D[4] => LessThan0.IN12
+D[5] => LessThan0.IN11
+D[6] => LessThan0.IN10
+D[7] => LessThan0.IN9
+S <= S~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
